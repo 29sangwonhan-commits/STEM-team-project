@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindfulAI | Support</title>
+    <title>MindfulAI | Your Support Companion</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -19,36 +19,45 @@
     </nav>
 
     <header class="hero">
-        <img src="image_e58d9e.png" alt="Mental Health Mascot" class="main-char">
-        <h1>You are not alone</h1>
-        <p>I'm your AI companion, here to listen without judgment.</p>
+        <img src="image_e58d9e.png" alt="Our Brain Character" class="main-char">
+        <h1>Your Mind is a Beautiful Place</h1>
+        <p>I am your AI friend, here to help you navigate your thoughts.</p>
         <button class="btn-large" onclick="focusChat()">Chat With Us Now!</button>
     </header>
 
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>I am Gemini, your adaptive AI collaborator. I balance empathy with candor, providing a safe space to process your thoughts and emotions.</p>
+        <p>I am Gemini, your adaptive AI collaborator. I’m built to be a supportive peer—someone who listens with empathy and speaks with honesty to help you feel grounded.</p>
     </section>
 
     <section id="video" class="container pink-section">
         <h2>Mental Support Video</h2>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/zt4sOjWwV3M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-frame">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/zt4sOjWwV3M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </section>
 
     <section id="resources" class="container">
         <h2>Resources</h2>
+        <p>Upload any documents or journals you'd like to keep safe.</p>
         <input type="file" id="fileUpload" hidden>
-        <label for="fileUpload" class="btn">Upload Support Documents</label>
+        <label for="fileUpload" class="btn">Upload Resource</label>
     </section>
 
     <div class="chat-widget" id="chatWidget">
         <div class="chat-header">
-            <img src="image_e58d9e.png" alt="AI" class="chat-pfp">
+            <img src="image_e58d9e.png" alt="PFP" class="chat-pfp">
             <span>MindfulAI Support</span>
         </div>
         <div class="chat-body" id="chatMessages">
-            <div class="msg bot">Hi! I'm here for you. How are you feeling right now?</div>
+            <div class="msg bot">Hi there! I'm here to listen. How are you feeling today?</div>
         </div>
         <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Talk to me..." autocomplete="off">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindfulAI | Your Mental Health Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MindfulAI</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#games">Mini Games</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <img src="image_e58d9e.png" alt="Brain Character" class="main-char">
+            <h1>Meet Your Support System</h1>
+            <p>A safe space for your thoughts, powered by empathy.</p>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I am Gemini, your adaptive AI collaborator. Designed to be a supportive and grounded peer, I balance empathy with candor. My goal is to help you navigate your mental well-being by providing insightful, clear, and concise support whenever you need it.</p>
+    </section>
+
+    <hr>
+
+    <section id="career" class="container">
+        <h2>Career & Mission</h2>
+        <p>Our mission is to bridge the gap between technology and emotional intelligence. We specialize in developing AI that doesn't just process data, but understands the human experience.</p>
+    </section>
+
+    <hr>
+
+    <section id="resources" class="container">
+        <h2>Upload Resources</h2>
+        <div class="upload-box">
+            <input type="file" id="fileUpload">
+            <label for="fileUpload" class="btn">Choose File</label>
+        </div>
+    </section>
+
+    <section id="games" class="container">
+        <h2>Source Mini Games</h2>
+        <div class="game-placeholder">
+            <p>Breathing Exercise Game Loading...</p>
+            <button class="btn" onclick="startGame()">Start Game</button>
+        </div>
+    </section>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <img src="image_e58d9e.png" alt="Profile" class="chat-pfp">
+            <span>MindfulAI Chat</span>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <p class="bot-msg">Hi there! How are you feeling today?</p>
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Type a message...">
+            <button>Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

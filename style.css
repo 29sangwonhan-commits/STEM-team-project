@@ -1,96 +1,63 @@
 :root {
-    --main-pink: #FFD1DC;
-    --dark-burgundy: #800020;
-    --light-grey: #f9f9f9;
-    --white: #ffffff;
+    --primary-pink: #FFC1CC; /* Brighter Pink */
+    --accent-burgundy: #800020;
+    --soft-white: #FFF5F7;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--white);
-    color: #333;
+    background-color: var(--soft-white);
     margin: 0;
     scroll-behavior: smooth;
 }
 
-h1, h2 {
-    font-family: 'Bebas Neue', cursive;
-    color: var(--dark-burgundy);
-    letter-spacing: 1px;
-}
+h1, h2 { font-family: 'Bebas Neue'; color: var(--accent-burgundy); }
 
 .navbar {
+    background: var(--primary-pink);
     display: flex;
     justify-content: space-between;
     padding: 15px 5%;
-    background: var(--main-pink);
-    border-bottom: 2px solid var(--dark-burgundy);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    border-bottom: 2px solid var(--accent-burgundy);
 }
-
-.logo { font-family: 'Bebas Neue'; font-size: 1.5rem; color: var(--dark-burgundy); }
 
 .nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { text-decoration: none; color: var(--accent-burgundy); font-weight: bold; }
 
-.nav-links a { text-decoration: none; color: var(--dark-burgundy); font-weight: bold; }
-
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(to bottom, var(--main-pink), var(--white));
-}
-
-.main-char { width: 300px; max-width: 800px; margin-bottom: 20px; }
+.hero { text-align: center; padding: 50px 20px; background: var(--primary-pink); }
+.main-char { width: 280px; border-radius: 20px; }
 
 .btn-large {
-    background: var(--dark-burgundy);
+    background: var(--accent-burgundy);
     color: white;
-    padding: 20px 40px;
+    padding: 15px 35px;
     border: none;
     font-family: 'Bebas Neue';
     font-size: 1.5rem;
-    cursor: pointer;
     border-radius: 50px;
-    transition: 0.3s;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-.btn-large:hover { transform: scale(1.1); background: #a00028; }
+.container { padding: 50px 10%; text-align: center; }
+.pink-section { background: #FFDDE2; }
 
-.container { padding: 60px 10%; text-align: center; }
+.video-container { margin-top: 20px; border: 5px solid var(--accent-burgundy); display: inline-block; }
 
-.pink-bg { background-color: #fff0f3; }
-
-/* Breathing Game */
-.game-box { margin-top: 30px; }
-
-.breathing-circle {
-    width: 100px;
-    height: 100px;
-    background: var(--main-pink);
-    border: 5px solid var(--dark-burgundy);
-    border-radius: 50%;
-    margin: 20px auto;
-    transition: transform 4s ease-in-out;
-}
-
-.expand { transform: scale(2.5); }
-
-/* Chatbot */
+/* Chat UI */
 .chat-widget {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 320px;
+    width: 330px;
     background: white;
-    border: 2px solid var(--dark-burgundy);
+    border: 2px solid var(--accent-burgundy);
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .chat-header {
-    background: var(--dark-burgundy);
+    background: var(--accent-burgundy);
     color: white;
     padding: 10px;
     display: flex;
@@ -99,14 +66,14 @@ h1, h2 {
     border-radius: 12px 12px 0 0;
 }
 
-.chat-pfp { width: 40px; height: 40px; border-radius: 50%; background: var(--main-pink); }
+.chat-pfp { width: 35px; height: 35px; background: white; border-radius: 50%; }
 
-.chat-body { height: 250px; padding: 15px; overflow-y: auto; background: var(--light-grey); }
+.chat-body { height: 300px; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
 
-.bot-msg { background: var(--main-pink); padding: 10px; border-radius: 10px; margin-bottom: 10px; }
+.msg { padding: 10px; border-radius: 10px; max-width: 80%; font-size: 0.9rem; }
+.bot { background: var(--primary-pink); align-self: flex-start; }
+.user { background: #eee; align-self: flex-end; color: black; }
 
-.chat-footer { display: flex; padding: 10px; gap: 5px; }
-
-.chat-footer input { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px; }
-
-.btn { background: var(--dark-burgundy); color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-family: 'Bebas Neue'; }
+.chat-footer { display: flex; padding: 10px; border-top: 1px solid #ddd; }
+.chat-footer input { flex: 1; border: 1px solid #ccc; padding: 8px; border-radius: 5px; }
+.btn { background: var(--accent-burgundy); color: white; border: none; padding: 5px 15px; cursor: pointer; border-radius: 5px; font-family: 'Bebas Neue'; }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindfulAI | Your Mental Health Companion</title>
+    <title>MindfulAI | Your Support Companion</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -15,59 +15,58 @@
             <li><a href="#about">About</a></li>
             <li><a href="#career">Career</a></li>
             <li><a href="#resources">Resources</a></li>
-            <li><a href="#games">Mini Games</a></li>
+            <li><a href="#games">Peaceful Game</a></li>
         </ul>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <img src="image_e58d9e.png" alt="Brain Character" class="main-char">
-            <h1>Meet Your Support System</h1>
-            <p>A safe space for your thoughts, powered by empathy.</p>
+            <img src="image_e58d9e.png" alt="Our Brain Friend" class="main-char">
+            <h1>Your Mind Matters</h1>
+            <p>I am here to listen, support, and grow with you.</p>
+            <button class="btn-large" onclick="openChat()">Chat With Us Now!</button>
         </div>
     </header>
 
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>I am Gemini, your adaptive AI collaborator. Designed to be a supportive and grounded peer, I balance empathy with candor. My goal is to help you navigate your mental well-being by providing insightful, clear, and concise support whenever you need it.</p>
+        <p>I am Gemini, your adaptive AI collaborator. I balance empathy with candor, acting as a grounded peer to help you navigate your thoughts with clarity and kindness.</p>
     </section>
 
-    <hr>
-
-    <section id="career" class="container">
+    <section id="career" class="container pink-bg">
         <h2>Career & Mission</h2>
-        <p>Our mission is to bridge the gap between technology and emotional intelligence. We specialize in developing AI that doesn't just process data, but understands the human experience.</p>
+        <p>We are dedicated to mental health accessibility, combining technical innovation with human-centered design to ensure no one feels alone in their journey.</p>
     </section>
-
-    <hr>
 
     <section id="resources" class="container">
         <h2>Upload Resources</h2>
-        <div class="upload-box">
-            <input type="file" id="fileUpload">
-            <label for="fileUpload" class="btn">Choose File</label>
+        <div class="upload-area">
+            <input type="file" id="fileUpload" hidden>
+            <label for="fileUpload" class="btn">Upload Journal or Data</label>
         </div>
     </section>
 
-    <section id="games" class="container">
-        <h2>Source Mini Games</h2>
-        <div class="game-placeholder">
-            <p>Breathing Exercise Game Loading...</p>
-            <button class="btn" onclick="startGame()">Start Game</button>
+    <section id="games" class="container pink-bg">
+        <h2>Box Breathing Exercise</h2>
+        <p>A simple game to help ground your mind. Focus on the circle.</p>
+        <div class="game-box">
+            <div id="breather" class="breathing-circle"></div>
+            <p id="breathe-text">Click below to start</p>
+            <button class="btn" onclick="toggleBreathing()">Start Exercise</button>
         </div>
     </section>
 
     <div class="chat-widget" id="chatWidget">
         <div class="chat-header">
-            <img src="image_e58d9e.png" alt="Profile" class="chat-pfp">
-            <span>MindfulAI Chat</span>
+            <img src="image_e58d9e.png" alt="AI" class="chat-pfp">
+            <span>MindfulAI Support</span>
         </div>
         <div class="chat-body" id="chatBody">
-            <p class="bot-msg">Hi there! How are you feeling today?</p>
+            <p class="bot-msg">Hi! I'm your AI companion. How can I help you today?</p>
         </div>
         <div class="chat-footer">
-            <input type="text" placeholder="Type a message...">
-            <button>Send</button>
+            <input type="text" id="chatInput" placeholder="Write something...">
+            <button onclick="sendMessage()">Send</button>
         </div>
     </div>
 

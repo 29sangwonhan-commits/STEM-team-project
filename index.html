@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindfulAI | Your Support Companion</title>
+    <title>MindfulAI | Support</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -13,47 +13,34 @@
         <div class="logo">MindfulAI</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#career">Career</a></li>
+            <li><a href="#video">Support Video</a></li>
             <li><a href="#resources">Resources</a></li>
-            <li><a href="#games">Peaceful Game</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <img src="image_e58d9e.png" alt="Our Brain Friend" class="main-char">
-            <h1>Your Mind Matters</h1>
-            <p>I am here to listen, support, and grow with you.</p>
-            <button class="btn-large" onclick="openChat()">Chat With Us Now!</button>
-        </div>
+        <img src="image_e58d9e.png" alt="Mental Health Mascot" class="main-char">
+        <h1>You are not alone</h1>
+        <p>I'm your AI companion, here to listen without judgment.</p>
+        <button class="btn-large" onclick="focusChat()">Chat With Us Now!</button>
     </header>
 
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>I am Gemini, your adaptive AI collaborator. I balance empathy with candor, acting as a grounded peer to help you navigate your thoughts with clarity and kindness.</p>
+        <p>I am Gemini, your adaptive AI collaborator. I balance empathy with candor, providing a safe space to process your thoughts and emotions.</p>
     </section>
 
-    <section id="career" class="container pink-bg">
-        <h2>Career & Mission</h2>
-        <p>We are dedicated to mental health accessibility, combining technical innovation with human-centered design to ensure no one feels alone in their journey.</p>
+    <section id="video" class="container pink-section">
+        <h2>Mental Support Video</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zt4sOjWwV3M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </section>
 
     <section id="resources" class="container">
-        <h2>Upload Resources</h2>
-        <div class="upload-area">
-            <input type="file" id="fileUpload" hidden>
-            <label for="fileUpload" class="btn">Upload Journal or Data</label>
-        </div>
-    </section>
-
-    <section id="games" class="container pink-bg">
-        <h2>Box Breathing Exercise</h2>
-        <p>A simple game to help ground your mind. Focus on the circle.</p>
-        <div class="game-box">
-            <div id="breather" class="breathing-circle"></div>
-            <p id="breathe-text">Click below to start</p>
-            <button class="btn" onclick="toggleBreathing()">Start Exercise</button>
-        </div>
+        <h2>Resources</h2>
+        <input type="file" id="fileUpload" hidden>
+        <label for="fileUpload" class="btn">Upload Support Documents</label>
     </section>
 
     <div class="chat-widget" id="chatWidget">
@@ -61,15 +48,7 @@
             <img src="image_e58d9e.png" alt="AI" class="chat-pfp">
             <span>MindfulAI Support</span>
         </div>
-        <div class="chat-body" id="chatBody">
-            <p class="bot-msg">Hi! I'm your AI companion. How can I help you today?</p>
+        <div class="chat-body" id="chatMessages">
+            <div class="msg bot">Hi! I'm here for you. How are you feeling right now?</div>
         </div>
         <div class="chat-footer">
-            <input type="text" id="chatInput" placeholder="Write something...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>

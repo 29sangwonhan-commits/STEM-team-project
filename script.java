@@ -1,31 +1,44 @@
-// Simple function to simulate game start
-function startGame() {
-    alert("Starting 'Mindful Breathing' mini-game... Focus on the character!");
+// Function to scroll to chat and focus input
+function openChat() {
+    const chatInput = document.getElementById('chatInput');
+    document.getElementById('chatWidget').scrollIntoView({ behavior: 'smooth' });
+    chatInput.focus();
 }
 
-// Handling File Upload UI
-const fileInput = document.getElementById('fileUpload');
-fileInput.addEventListener('change', function() {
-    if (this.files && this.files[0]) {
-        alert("Resource '" + this.files[0].name + "' uploaded successfully!");
+// Simple Chat functionality
+function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const body = document.getElementById('chatBody');
+    
+    if (input.value.trim() !== "") {
+        const msg = document.createElement('p');
+        msg.style.textAlign = "right";
+        msg.innerHTML = `<strong>You:</strong> ${input.value}`;
+        body.appendChild(msg);
+        input.value = "";
+        body.scrollTop = body.scrollHeight;
     }
-});
+}
 
-// Basic Chat Simulation
-const chatInput = document.querySelector('.chat-footer input');
-const chatBtn = document.querySelector('.chat-footer button');
-const chatBody = document.getElementById('chatBody');
-
-chatBtn.addEventListener('click', () => {
-    if (chatInput.value.trim() !== "") {
-        const userMsg = document.createElement('p');
-        userMsg.style.textAlign = "right";
-        userMsg.innerHTML = `<strong>You:</strong> ${chatInput.value}`;
-        chatBody.appendChild(userMsg);
+// Breathing Game Logic
+let isBreathing = false;
+function toggleBreathing() {
+    const circle = document.getElementById('breather');
+    const text = document.getElementById('breathe-text');
+    
+    if (!isBreathing) {
+        isBreathing = true;
+        text.innerText = "Breathe In...";
+        circle.classList.add('expand');
         
-        chatInput.value = "";
-        
-        // Auto-scroll
-        chatBody.scrollTop = chatBody.scrollHeight;
+        setInterval(() => {
+            if(circle.classList.contains('expand')) {
+                circle.classList.remove('expand');
+                text.innerText = "Breathe Out...";
+            } else {
+                circle.classList.add('expand');
+                text.innerText = "Breathe In...";
+            }
+        }, 4000);
     }
-});
+}

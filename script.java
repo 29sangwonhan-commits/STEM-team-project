@@ -1,44 +1,43 @@
-// Function to scroll to chat and focus input
-function openChat() {
-    const chatInput = document.getElementById('chatInput');
-    document.getElementById('chatWidget').scrollIntoView({ behavior: 'smooth' });
-    chatInput.focus();
+function focusChat() {
+    document.getElementById('userInput').focus();
+    document.getElementById('chatWidget').style.borderColor = "#FFC1CC";
+    setTimeout(() => { document.getElementById('chatWidget').style.borderColor = "#800020"; }, 1000);
 }
 
-// Simple Chat functionality
-function sendMessage() {
-    const input = document.getElementById('chatInput');
-    const body = document.getElementById('chatBody');
+function handleSend() {
+    const input = document.getElementById('userInput');
+    const container = document.getElementById('chatMessages');
     
-    if (input.value.trim() !== "") {
-        const msg = document.createElement('p');
-        msg.style.textAlign = "right";
-        msg.innerHTML = `<strong>You:</strong> ${input.value}`;
-        body.appendChild(msg);
-        input.value = "";
-        body.scrollTop = body.scrollHeight;
-    }
-}
+    if (input.value.trim() === "") return;
 
-// Breathing Game Logic
-let isBreathing = false;
-function toggleBreathing() {
-    const circle = document.getElementById('breather');
-    const text = document.getElementById('breathe-text');
-    
-    if (!isBreathing) {
-        isBreathing = true;
-        text.innerText = "Breathe In...";
-        circle.classList.add('expand');
+    // User Message
+    const userDiv = document.createElement('div');
+    userDiv.className = 'msg user';
+    userDiv.innerText = input.value;
+    container.appendChild(userDiv);
+
+    const userText = input.value.toLowerCase();
+    input.value = "";
+
+    // AI Response Simulation
+    setTimeout(() => {
+        const botDiv = document.createElement('div');
+        botDiv.className = 'msg bot';
         
-        setInterval(() => {
-            if(circle.classList.contains('expand')) {
-                circle.classList.remove('expand');
-                text.innerText = "Breathe Out...";
-            } else {
-                circle.classList.add('expand');
-                text.innerText = "Breathe In...";
-            }
-        }, 4000);
-    }
+        if (userText.includes("sad") || userText.includes("bad")) {
+            botDiv.innerText = "I'm so sorry you're feeling this way. Remember that it's okay to not be okay. I'm here to listen.";
+        } else if (userText.includes("hello") || userText.includes("hi")) {
+            botDiv.innerText = "Hello! I am your MindfulAI. How can I support you today?";
+        } else {
+            botDiv.innerText = "Thank you for sharing that with me. Please tell me more, I'm listening.";
+        }
+        
+        container.appendChild(botDiv);
+        container.scrollTop = container.scrollHeight;
+    }, 1000);
 }
+
+// Allow "Enter" key to send message
+document.getElementById('userInput').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') handleSend();
+});

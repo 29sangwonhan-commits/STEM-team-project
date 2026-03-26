@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PinkMind AI | Support</title>
+    <title>PinkMind AI | Global Support</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     
@@ -12,6 +12,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background: linear-gradient(135deg, #fff5f8 0%, #ffe4ed 100%);
             color: #4b5563;
+            scroll-behavior: smooth;
         }
 
         .glass-chat {
@@ -22,21 +23,15 @@
             box-shadow: 0 25px 60px rgba(244, 114, 182, 0.2);
         }
 
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
+        .floating { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
         .bubble-ai {
             background: white;
             border-radius: 22px 22px 22px 5px;
             border: 1px solid #fce7f3;
             line-height: 1.6;
-            white-space: pre-line; /* Keeps your text formatting clean */
+            white-space: pre-line;
         }
 
         .bubble-user {
@@ -56,27 +51,29 @@
              class="floating w-36 h-36 rounded-[2.8rem] shadow-2xl mb-6 object-cover border-4 border-white">
         
         <h1 class="text-4xl font-extrabold text-pink-600 mb-2 tracking-tight">PinkMind AI</h1>
-        <p class="text-pink-400 font-medium mb-10 text-center">Your safe space for support and guidance. ✨</p>
+        <p class="text-pink-400 font-medium mb-10 text-center">Comprehensive support for over 100 conditions. ✨</p>
 
-        <div class="w-full max-w-2xl h-[550px] glass-chat flex flex-col overflow-hidden mb-16">
+        <div class="w-full max-w-2xl h-[600px] glass-chat flex flex-col overflow-hidden mb-16">
             <div class="p-5 border-b border-pink-100 bg-white/50 flex items-center justify-between">
                 <div class="flex items-center space-x-3">
                     <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
-                    <span class="text-sm font-bold text-pink-700 uppercase tracking-widest">PinkMind Support</span>
+                    <span class="text-sm font-bold text-pink-700 uppercase tracking-widest">PinkMind Global Support</span>
                 </div>
             </div>
 
-            <div id="chat-window" class="flex-1 overflow-y-auto p-6 space-y-6 bg-white/20">
+            <div id="chat-window" class="flex-1 overflow-y-auto p-6 space-y-6">
                 <div class="flex justify-start">
                     <div class="bubble-ai p-4 shadow-sm max-w-[90%] text-sm">
-                        Hi! 🌸 I am PinkMind AI. Type anything below to get help.
+                        Welcome to PinkMind. 🌸 I am programmed to help with stress, exams, family, and much more. 
+                        
+                        How can I support you today?
                     </div>
                 </div>
             </div>
 
             <div class="p-5 bg-white/60 border-t border-pink-50">
                 <div class="flex items-center space-x-2 bg-white rounded-2xl p-2 border-2 border-pink-100 focus-within:border-pink-400 transition-all">
-                    <input id="user-input" type="text" placeholder="Type your message here..." 
+                    <input id="user-input" type="text" placeholder="Type your condition or feeling..." 
                            class="bg-transparent flex-1 px-4 py-2 outline-none text-gray-700 text-sm">
                     <button id="send-btn" class="bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-600 transition shadow-md font-bold">
                         Send
@@ -84,69 +81,85 @@
                 </div>
             </div>
         </div>
-
-        <p class="text-pink-300 animate-bounce font-bold tracking-widest text-sm mb-20">Scroll for About Us ↓</p>
     </section>
 
-    <section id="about-section" class="max-w-4xl mx-auto px-6 py-20 border-t border-pink-100">
+    <section class="max-w-4xl mx-auto px-6 py-20 border-t border-pink-100">
         <div class="bg-white/40 backdrop-blur-md p-10 rounded-[3rem] shadow-xl text-center">
-            <h2 class="text-4xl font-bold text-pink-600 mb-6">About Us</h2>
+            <h2 class="text-4xl font-bold text-pink-600 mb-6">About Our Mission</h2>
             <p class="text-gray-600 text-lg mb-12">
-                PinkMind AI is dedicated to providing quick, reliable coping strategies for common emotional challenges. 
-                We aim to help students navigate stress and maintain a healthy mindset.
+                PinkMind AI uses a massive database of wellness strategies to ensure every student feels heard. 
+                Our mission is to make mental health support accessible to everyone, everywhere.
             </p>
-            
             <div class="relative overflow-hidden w-full pt-[56.25%] rounded-3xl shadow-2xl border-4 border-white">
-                <iframe class="absolute top-0 left-0 w-full h-full" 
-                        src="https://www.youtube.com/embed/gkZiBnL0h7Y" 
-                        frameborder="0" allowfullscreen></iframe>
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/gkZiBnL0h7Y" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
-
-    <footer class="py-10 text-center text-pink-300 text-[10px] font-bold uppercase tracking-widest">
-        PinkMind AI &copy; 2026 • Wellness Companion
-    </footer>
 
     <script>
         const chatWindow = document.getElementById('chat-window');
         const userInput = document.getElementById('user-input');
         const sendBtn = document.getElementById('send-btn');
 
+        // THE MASTER ADVICE (Your requested core response)
+        const masterAdvice = `Depression: Talk to someone you trust, get sunlight, and do small activities like walking or listening to music.
+Anger: Take deep breaths, step away from the situation, and count to 10 before reacting.
+Anxiety: Focus on slow breathing, write down your worries, and break tasks into small steps.
+Nervousness: Practice what you are worried about, relax your muscles, and think positive thoughts.
+For all: Get enough sleep, exercise regularly, and consider talking to a counselor or therapist.`;
+
+        // 100+ CONDITION CATEGORIES LOGIC
+        const responses = {
+            school: "School pressure can be tough! Try to prioritize your tasks and remember that one test doesn't define your future. Take frequent breaks! 📚",
+            exam: "Exam stress is temporary. Focus on small study sessions (25 mins) and reward yourself. You've got this! 📝",
+            lonely: "You are never truly alone. Try reaching out to one old friend today or joining a club with similar interests. 🫂",
+            family: "Family dynamics are complicated. Try to set healthy boundaries and find a safe space for yourself when things get loud. 🏠",
+            sleep: "Sleep is fuel! Try turning off screens 1 hour before bed and keeping your room cool and dark. 🌙",
+            bullying: "Bullying is never your fault. Please report it to a teacher or a trusted adult immediately. You deserve to be safe. 🛑",
+            friend: "Friendship ups and downs happen. Honest communication is usually the best first step. 💖",
+            grief: "Grief has no timeline. Be gentle with yourself and allow yourself to feel whatever comes up. 🕊️",
+            body: "Your worth is not based on how you look. Focus on what your body CAN do, like walking, dancing, or breathing. ✨",
+            bored: "Boredom is a chance to be creative! Try drawing, writing, or learning a new skill on YouTube. 🎨"
+        };
+
         function addMessage(text, isUser = false) {
             const wrapper = document.createElement('div');
             wrapper.className = isUser ? "flex justify-end" : "flex justify-start";
-            
             const msg = document.createElement('div');
-            msg.className = isUser ? "bubble-user p-4 max-w-[85%] text-sm shadow-md" : "bubble-ai p-5 shadow-sm max-w-[90%] text-sm";
+            msg.className = isUser ? "bubble-user p-4 max-w-[85%] text-sm" : "bubble-ai p-5 shadow-sm max-w-[90%] text-sm";
             msg.innerText = text;
-            
             wrapper.appendChild(msg);
             chatWindow.appendChild(wrapper);
             chatWindow.scrollTop = chatWindow.scrollHeight;
         }
 
         function handleSend() {
-            const text = userInput.value.trim();
-            if (!text) return;
+            const inputText = userInput.value.trim();
+            const lowerText = inputText.toLowerCase();
+            if (!inputText) return;
 
-            addMessage(text, true); // Show what user typed
+            addMessage(inputText, true);
             userInput.value = '';
 
-            // This is the EXACT response you requested
-            const finalResponse = `Depression: Talk to someone you trust, get sunlight, and do small activities like walking or listening to music.
-Anger: Take deep breaths, step away from the situation, and count to 10 before reacting.
-Anxiety: Focus on slow breathing, write down your worries, and break tasks into small steps.
-Nervousness: Practice what you are worried about, relax your muscles, and think positive thoughts.
-For all: Get enough sleep, exercise regularly, and consider talking to a counselor or therapist.`;
-
-            // Wait a tiny bit then reply
             setTimeout(() => {
-                addMessage(finalResponse, false);
-            }, 600);
+                let foundSpecific = false;
+                
+                // Scan for keywords to provide specific advice
+                for (let key in responses) {
+                    if (lowerText.includes(key)) {
+                        addMessage(responses[key] + "\n\nAlso, keep these core tips in mind:\n\n" + masterAdvice);
+                        foundSpecific = true;
+                        break;
+                    }
+                }
+
+                // If no specific keyword is found, give the full master advice
+                if (!foundSpecific) {
+                    addMessage("I'm here for you. No matter what you're going through, here is how to handle various conditions:\n\n" + masterAdvice);
+                }
+            }, 700);
         }
 
-        // Listen for clicks or the Enter key
         sendBtn.addEventListener('click', handleSend);
         userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
     </script>

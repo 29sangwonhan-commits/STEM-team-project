@@ -1,14 +1,21 @@
-/* Custom Styles */
 body {
     background: linear-gradient(135deg, #fff5f8 0%, #ffe4ed 100%);
     font-family: 'sans-serif';
+    color: #4b5563;
+    scroll-behavior: smooth;
+}
+
+.hidden { display: none !important; }
+
+.glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
 }
 
 .glass-container {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
     border-radius: 3rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
 
 .floating-img {
@@ -23,14 +30,16 @@ body {
 .start-btn {
     background-color: #ec4899;
     color: white;
-    padding: 1.25rem 2.5rem;
+    padding: 1.25rem 3rem;
     border-radius: 9999px;
-    font-weight: bold;
-    transition: all 0.3s;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .start-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(-1deg);
     background-color: #db2777;
 }
 
@@ -38,36 +47,41 @@ body {
     display: flex;
     background: white;
     padding: 0.5rem;
-    border-radius: 1rem;
-    border: 2px solid #fbcfe8;
+    border-radius: 1.5rem;
+    border: 2px solid #fce7f3;
 }
 
 #user-input {
     flex: 1;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     outline: none;
+    background: transparent;
 }
 
 #send-btn {
     background: #ec4899;
     color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: bold;
 }
 
+/* Chat Bubbles */
 .chat-bubble-ai {
     background: white;
-    padding: 1rem;
-    border-radius: 20px 20px 20px 4px;
+    padding: 1.25rem;
+    border-radius: 24px 24px 24px 4px;
     max-width: 80%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border: 1px solid #fce7f3;
 }
 
 .chat-bubble-user {
     background: #f472b6;
     color: white;
-    padding: 1rem;
-    border-radius: 20px 20px 4px 20px;
+    padding: 1.25rem;
+    border-radius: 24px 24px 4px 24px;
     max-width: 80%;
     margin-left: auto;
+    box-shadow: 0 8px 15px rgba(244, 114, 182, 0.2);
 }

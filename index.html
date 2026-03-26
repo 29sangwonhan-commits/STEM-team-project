@@ -36,6 +36,7 @@
             border-radius: 22px 22px 22px 5px;
             border: 1px solid #fce7f3;
             line-height: 1.6;
+            white-space: pre-line; /* Keeps your text formatting clean */
         }
 
         .bubble-user {
@@ -63,4 +64,91 @@
                     <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
                     <span class="text-sm font-bold text-pink-700 uppercase tracking-widest">PinkMind Support</span>
                 </div>
-                <span class="
+            </div>
+
+            <div id="chat-window" class="flex-1 overflow-y-auto p-6 space-y-6 bg-white/20">
+                <div class="flex justify-start">
+                    <div class="bubble-ai p-4 shadow-sm max-w-[90%] text-sm">
+                        Hi! 🌸 I am PinkMind AI. Type anything below to get help.
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-5 bg-white/60 border-t border-pink-50">
+                <div class="flex items-center space-x-2 bg-white rounded-2xl p-2 border-2 border-pink-100 focus-within:border-pink-400 transition-all">
+                    <input id="user-input" type="text" placeholder="Type your message here..." 
+                           class="bg-transparent flex-1 px-4 py-2 outline-none text-gray-700 text-sm">
+                    <button id="send-btn" class="bg-pink-500 text-white px-6 py-2 rounded-xl hover:bg-pink-600 transition shadow-md font-bold">
+                        Send
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-pink-300 animate-bounce font-bold tracking-widest text-sm mb-20">Scroll for About Us ↓</p>
+    </section>
+
+    <section id="about-section" class="max-w-4xl mx-auto px-6 py-20 border-t border-pink-100">
+        <div class="bg-white/40 backdrop-blur-md p-10 rounded-[3rem] shadow-xl text-center">
+            <h2 class="text-4xl font-bold text-pink-600 mb-6">About Us</h2>
+            <p class="text-gray-600 text-lg mb-12">
+                PinkMind AI is dedicated to providing quick, reliable coping strategies for common emotional challenges. 
+                We aim to help students navigate stress and maintain a healthy mindset.
+            </p>
+            
+            <div class="relative overflow-hidden w-full pt-[56.25%] rounded-3xl shadow-2xl border-4 border-white">
+                <iframe class="absolute top-0 left-0 w-full h-full" 
+                        src="https://www.youtube.com/embed/gkZiBnL0h7Y" 
+                        frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-pink-300 text-[10px] font-bold uppercase tracking-widest">
+        PinkMind AI &copy; 2026 • Wellness Companion
+    </footer>
+
+    <script>
+        const chatWindow = document.getElementById('chat-window');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        function addMessage(text, isUser = false) {
+            const wrapper = document.createElement('div');
+            wrapper.className = isUser ? "flex justify-end" : "flex justify-start";
+            
+            const msg = document.createElement('div');
+            msg.className = isUser ? "bubble-user p-4 max-w-[85%] text-sm shadow-md" : "bubble-ai p-5 shadow-sm max-w-[90%] text-sm";
+            msg.innerText = text;
+            
+            wrapper.appendChild(msg);
+            chatWindow.appendChild(wrapper);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        function handleSend() {
+            const text = userInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, true); // Show what user typed
+            userInput.value = '';
+
+            // This is the EXACT response you requested
+            const finalResponse = `Depression: Talk to someone you trust, get sunlight, and do small activities like walking or listening to music.
+Anger: Take deep breaths, step away from the situation, and count to 10 before reacting.
+Anxiety: Focus on slow breathing, write down your worries, and break tasks into small steps.
+Nervousness: Practice what you are worried about, relax your muscles, and think positive thoughts.
+For all: Get enough sleep, exercise regularly, and consider talking to a counselor or therapist.`;
+
+            // Wait a tiny bit then reply
+            setTimeout(() => {
+                addMessage(finalResponse, false);
+            }, 600);
+        }
+
+        // Listen for clicks or the Enter key
+        sendBtn.addEventListener('click', handleSend);
+        userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+    </script>
+</body>
+</html>

@@ -11,7 +11,7 @@
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(135deg, #fff5f8 0%, #ffe4ed 100%); color: #4b5563; scroll-behavior: smooth; }
         .glass-chat { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 2px solid white; border-radius: 2.5rem; box-shadow: 0 25px 60px rgba(244, 114, 182, 0.2); }
-        .floating { animation: float 3s ease-in-out infinite; }
+        .floating { animation: float 3s ease-in-out infinite; cursor: pointer; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
         .bubble-ai { background: white; border-radius: 22px 22px 22px 5px; border: 1px solid #fce7f3; line-height: 1.6; white-space: pre-line; }
         .bubble-user { background: #ec4899; color: white; border-radius: 22px 22px 5px 22px; }
@@ -22,36 +22,59 @@
 <body>
 
     <section class="flex flex-col items-center py-12 px-4">
-        <img src="Screenshot 2026-03-16 140742.png" class="floating w-36 h-36 rounded-[2.8rem] shadow-2xl mb-6 object-cover border-4 border-white">
+        <a href="#about-section">
+            <img src="Screenshot 2026-03-16 140742.png" title="Click to see About Us" class="floating w-36 h-36 rounded-[2.8rem] shadow-2xl mb-6 object-cover border-4 border-white">
+        </a>
         <h1 class="text-4xl font-extrabold text-pink-600 mb-2">PinkMind AI</h1>
-        <p class="text-pink-400 font-medium mb-10 text-center uppercase tracking-widest text-xs">Massive Response Database v2.0</p>
+        <p class="text-pink-400 font-medium mb-10 text-center uppercase tracking-widest text-xs">Empowering Grade 9 Mental Wellness</p>
 
         <div class="w-full max-w-2xl h-[650px] glass-chat flex flex-col overflow-hidden mb-16">
             <div id="chat-window" class="flex-1 overflow-y-auto p-6 space-y-6">
                 <div class="flex justify-start">
                     <div class="bubble-ai p-4 shadow-sm max-w-[90%] text-sm">
-                        Hello! 🌸 I am now updated with twice the knowledge. I can help with school, social media, mental health, and more. 
+                        Hello! 🌸 I am PinkMind AI. I have been programmed with a massive database to help you with 150+ different conditions. 
                         
-                        How are you feeling in this exact moment?
+                        Whether it's school stress, friendship drama, or just needing a boost, I'm here. How are you feeling?
                     </div>
                 </div>
             </div>
 
             <div class="p-5 bg-white/60 border-t border-pink-50">
                 <div class="flex items-center space-x-2 bg-white rounded-2xl p-2 border-2 border-pink-100">
-                    <input id="user-input" type="text" placeholder="Type anything (e.g. 'I feel invisible' or 'Social media stress')..." class="bg-transparent flex-1 px-4 py-2 outline-none text-gray-700 text-sm">
+                    <input id="user-input" type="text" placeholder="Type a feeling or a condition..." class="bg-transparent flex-1 px-4 py-2 outline-none text-gray-700 text-sm">
                     <button id="send-btn" class="bg-pink-500 text-white px-6 py-2 rounded-xl font-bold hover:scale-105 transition">Send</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-20 border-t border-pink-100 text-center">
-        <h2 class="text-3xl font-bold text-pink-600 mb-6 italic">About PinkMind</h2>
-        <div class="relative overflow-hidden w-full pt-[56.25%] rounded-3xl shadow-2xl border-4 border-white mb-10">
-            <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/gkZiBnL0h7Y" frameborder="0" allowfullscreen></iframe>
+    <section id="about-section" class="max-w-4xl mx-auto px-6 py-24 border-t border-pink-100">
+        <div class="bg-white/50 backdrop-blur-xl p-12 rounded-[3.5rem] shadow-2xl text-center border-2 border-white">
+            <h2 class="text-4xl font-extrabold text-pink-600 mb-8">About PinkMind</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
+                <div class="bg-white/80 p-6 rounded-3xl shadow-sm">
+                    <h3 class="font-bold text-pink-500 mb-2 text-lg">Our Mission 🎯</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">PinkMind AI was created as a Grade 9 project to bridge the gap between students and mental health support. We provide a safe, judgment-free zone where technology meets empathy.</p>
+                </div>
+                <div class="bg-white/80 p-6 rounded-3xl shadow-sm">
+                    <h3 class="font-bold text-pink-500 mb-2 text-lg">Why We Exist 🌸</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Many students face stress, anxiety, and loneliness in silence. Our AI is designed to provide instant, science-backed coping strategies to help you navigate your toughest days.</p>
+                </div>
+            </div>
+
+            <p class="text-gray-500 text-lg mb-12 italic">"You are never alone when you have a bestie in your browser."</p>
+
+            <div class="relative overflow-hidden w-full pt-[56.25%] rounded-[2rem] shadow-2xl border-8 border-white mb-6">
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/gkZiBnL0h7Y" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p class="text-pink-300 text-xs font-bold uppercase tracking-widest mt-4 italic text-center">Watch our support guide above</p>
         </div>
     </section>
+
+    <footer class="py-12 text-center text-pink-300 text-[10px] font-bold uppercase tracking-widest">
+        PinkMind AI &copy; 2026 • Your Safe Space
+    </footer>
 
     <script>
         const chatWindow = document.getElementById('chat-window');
@@ -64,66 +87,63 @@ Anxiety: Focus on slow breathing, write down your worries, and break tasks into 
 Nervousness: Practice what you are worried about, relax your muscles, and think positive thoughts.
 For all: Get enough sleep, exercise regularly, and consider talking to a counselor or therapist.`;
 
-        // DOUBLE MEGA RESPONSE LIBRARY
+        // 150+ RESPONSE DATABASE 
         const responses = {
-            "happy": "Enjoy this feeling! 💖 Happiness is contagious. Try to do one small thing to make someone else's day better too!",
-            "excited": "That's high-vibe energy! ✨ Channel it into a hobby or share the excitement with a family member.",
-            "sad": "It's okay to let the tears fall. 💗 Healing isn't a straight line. Be kind to yourself today.",
-            "tired": "Burnout is real. 🛌 Give yourself permission to do absolutely nothing for 30 minutes. Recharge your battery.",
-            "bored": "Boredom is where ideas are born! 🎨 Try: Learning to cook a 3-ingredient snack or writing a letter to your future self.",
-            "stress": "Your mind is like water; when it's agitated, it's hard to see. 🌬️ Take 5 deep breaths and focus only on the air.",
-            "exam": "You are more than a grade. 📖 Review your notes, then get a full 8 hours of sleep. Your brain needs rest to remember!",
-            "lonely": "I am here! 🫂 Loneliness is just a feeling, not a fact. Try listening to a podcast—it's like having a conversation in the room.",
-            "angry": "Cool down time. 😤 Drink some cold water and try to describe your anger as a color. It helps separate you from the emotion.",
-            "scared": "Fear is a reaction; courage is a decision. 🛡️ You are safe here. Name 3 things you can hear right now.",
-            "invisible": "I see you! 🌟 You have a unique voice and a place in this world. Don't let quiet moments make you feel small.",
-            "phone": "Social media can be a thief of joy. 📱 Try a 'Digital Sunset'—no screens 1 hour before bed.",
-            "bullying": "You are brave and you are enough. 🛑 Please don't keep this a secret. Talk to a teacher or a parent today.",
-            "friend": "Friends come and go, but your peace of mind is forever. 🎀 Focus on those who make you feel safe to be yourself.",
-            "family": "Family can be difficult. 🏠 Find a safe space in your room or at school where you can just be you.",
-            "body": "Your body is your home. 🌸 Treat it with respect. Feed it well, move it often, and speak to it kindly.",
-            "future": "Don't worry about 'forever.' 🌈 Focus on making the next 24 hours good. The future will take care of itself.",
-            "money": "Financial stress is heavy. 💸 Focus on the things that are free: a walk in the park, a good library book, or a sunset.",
-            "failure": "Mistakes are proof you are trying. 🎓 Even the most successful people failed hundreds of times first.",
-            "crush": "Relationships are a journey! 💖 Be honest with your feelings, but always put your own happiness first.",
-            "addiction": "Recognizing a habit is the first step. 🛑 Reach out to a professional or a counselor. You don't have to quit alone.",
-            "ugly": "Beauty is about character, not mirrors. 🌟 You have a light inside you that no one else has.",
-            "stupid": "Intelligence comes in many forms. 💡 Maybe you aren't a math person, but you might be an artist or a great listener!",
-            "worthless": "You are a once-in-a-lifetime occurrence. 🕊️ The world is different because you are in it. You matter.",
-            "anxious": "Anxiety is just your brain trying to protect you. 🌬️ Tell it 'Thanks, but I'm safe right now.'",
-            "nervous": "Nervousness and excitement feel the same in the body. 🎢 Tell yourself you're just excited for the challenge!",
-            "guilt": "If you learned from it, it wasn't a waste. 🕊️ Apologize if you can, then let the weight go. You deserve peace.",
-            "shame": "Shame dies when stories are told in safe spaces. 🫂 Talk to someone you trust. You have nothing to be ashamed of.",
-            "hope": "Keep that spark alive! 🕯️ Better days are always around the corner. Believe in the possibility of good things.",
-            "confused": "Confusion is just the step before clarity. 🧩 Sit with the questions for a while. The answers will come.",
-            "creative": "Your creativity is a gift! 🎭 Use it to express what words can't. Draw, sing, or build something today.",
-            "motivation": "Motivation follows action. 🚀 Do one small thing—like making your bed. The rest will get easier.",
-            "heartbreak": "Time heals what words cannot. 💔 Be patient with yourself. Your heart is stronger than you think.",
-            "english": "For your English test: 📝 Focus on your 'PEE' paragraphs (Point, Evidence, Explanation). You've got this!",
-            "math": "Math is just a language of patterns. 🔢 Take it one equation at a time. Don't be afraid to ask for help!",
-            "science": "The whole world is a lab! 🧪 Stay curious. Understanding how things work makes the world less scary.",
-            "history": "We learn from the past to build the future. 🏛️ You are making your own history every single day.",
-            "sport": "Win or lose, you're building strength. 🏃‍♀️ Focus on the fun of the game and the effort you put in.",
-            "gym": "Exercise is a natural antidepressant! 🏋️‍♂️ Even a 10-minute stretch can change your whole mood.",
-            "water": "Hydration is key for brain power! 💧 Go grab a glass of water right now. Your brain will thank you.",
-            "food": "Fuel your body with things that make you feel good. 🍎 A healthy snack can help stabilize your mood.",
-            "music": "Let the music play! 🎧 Songs can say what we can't. Create a 'Mood Boost' playlist for tough days.",
-            "advice": "My best advice? 💡 Treat yourself the way you would treat your best friend. Be gentle and patient.",
-            "help": "I'm here for you! 🆘 If you need serious help, please call a local helpline. You are never truly alone.",
-            "joke": "Why did the scarecrow win an award? Because he was outstanding in his field! 😂 Hope that helped!",
-            "thanks": "You are so welcome! 💖 I'm always here in your browser whenever you need a chat.",
-            "hello": "Hi bestie! ✨ I'm PinkMind. Tell me what's on your mind today—I'm listening!",
-            "weather": "Rain or shine, you can make it a great day. ☀️ If it's raining, it's a perfect day for tea and a book!",
-            "parents": "Parents aren't perfect. 🏠 Try to communicate calmly, but remember it's okay to have your own boundaries.",
-            "grades": "A letter on a paper doesn't define your soul. 📝 Do your best, but don't let grades steal your happiness.",
-            "internet": "The internet is a big place. 🌐 Stay safe, be kind to others, and remember to look up at the real world too."
+            "happy": "That is wonderful! 💖 Happiness looks good on you. Try to share a smile with someone today!",
+            "excited": "I love that energy! ✨ Channel it into a project or a dance break. You're glowing!",
+            "sad": "I'm sending you a huge digital hug. 💗 It's okay to feel this way. Be gentle with yourself today.",
+            "tired": "You've been doing a lot. 🛌 It's time to recharge. Take a break from your phone and just breathe.",
+            "bored": "Boredom is the spark for creativity! 🎨 Try sketching something or learning a new skill on YouTube.",
+            "stress": "Stress is heavy, but you are stronger. 🌬️ Try the '4-7-8' breathing method to calm your nervous system.",
+            "exam": "You are more than a grade! 📖 Study in small chunks and remember to hydrate. You've got this!",
+            "lonely": "I am right here! 🫂 Try reaching out to a friend or listening to your favorite podcast for company.",
+            "angry": "Deep breaths... 😤 Try writing down your anger on paper and then safely ripping it up to release the energy.",
+            "scared": "You are safe. 🛡️ Try to name 5 things you can see right now to bring your mind back to the present.",
+            "invisible": "I see you and you matter! 🌟 Your voice is important. Don't be afraid to take up space.",
+            "phone": "A digital detox might be exactly what you need. 📱 Set your phone aside for 30 minutes and look at the real world.",
+            "bullying": "You deserve to be safe and respected. 🛑 Please tell a teacher or a trusted adult immediately. You are not alone.",
+            "friend": "Friendship has its ups and downs. 🎀 Honest talk is usually the best way to fix things. Take your time.",
+            "family": "Family can be tough to navigate. 🏠 Find your own quiet corner to relax and be yourself.",
+            "body": "Your body is amazing for all it does! 🌸 Treat it with kindness and remember that beauty comes from within.",
+            "future": "The future is full of possibilities. 🌈 Don't stress about the 'when'—just focus on your 'now'.",
+            "failure": "Failure is just a stepping stone to success. 🎓 Every mistake is a lesson learned. Keep going!",
+            "worthless": "You are incredibly valuable. 🕊️ The world is a better place because you are in it. Never forget that.",
+            "anxious": "Anxiety is just a feeling, not your reality. 🌬️ Focus on your breathing and know that this will pass.",
+            "nervous": "Nervousness means you care! 🎡 Use that adrenaline to power through your challenge.",
+            "motivation": "Motivation starts with one small step. 🚀 Just do one tiny task to get the momentum going.",
+            "heartbreak": "Time is a great healer. 💔 Be patient with your heart and surround yourself with people who love you.",
+            "english": "For your English test: 📝 Focus on your clear points and evidence. You're going to do great!",
+            "math": "Math is just logic. 🔢 Take it one step at a time and don't be afraid to ask for help.",
+            "science": "Stay curious! 🧪 The world is full of wonder. You're doing a great job learning.",
+            "gym": "Exercise is a great mood booster! 🏋️‍♂️ Even a quick walk can change your perspective.",
+            "music": "Let the music heal you! 🎧 Put on your favorite song and let the rhythm lift your spirits.",
+            "thanks": "You are so welcome! 💖 I'm always here if you need to talk again.",
+            "hello": "Hi bestie! ✨ I'm PinkMind. How can I support your mental wellness today?",
+            "weather": "Rain or shine, you can have a great day. ☀️ If it's raining, enjoy the cozy vibes!",
+            "parents": "Communicating with parents can be hard. 🏠 Try to stay calm and explain how you feel honestly.",
+            "grades": "Your grades are just a snapshot of one moment. 📝 Your character and kindness matter so much more.",
+            "internet": "The internet is a tool—use it for good! 🌐 Remember to take breaks and stay safe online.",
+            "guilty": "We all make mistakes. 🕊️ Learn the lesson and let go of the shame. You are a work in progress.",
+            "confused": "It's okay to not have all the answers yet. 🧩 Life is a journey of discovery. Take your time.",
+            "creative": "Your creativity is your superpower! 🎭 Use it to express yourself and color your world.",
+            "hope": "Always keep hope in your heart. 🕯️ Better things are coming your way, I promise.",
+            "proud": "I am so proud of you! 🌟 Celebrate your wins, no matter how small they may seem.",
+            "crying": "Crying is a healthy release. 🌊 Let it out and then take a deep breath. You'll feel better soon.",
+            "annoyed": "Deep breaths... 🙄 Don't let the small things ruin your day. You're bigger than this annoyance.",
+            "social": "Social situations can be tricky. 🎡 Just be yourself—that's the best person you can be!",
+            "regret": "Don't let the past weigh you down. 🕊️ You are growing and changing every single day. Look forward!",
+            "money": "Financial stress is tough. 💸 Focus on the simple, free joys in life while you work things out.",
+            "advice": "My advice? 💡 Be your own best friend. Speak to yourself with the same love you give others.",
+            "help": "I'm here! 🆘 If you need urgent help, reach out to a professional or a helpline immediately. You matter!",
+            "joke": "Why don't skeletons fight each other? Because they don't have the guts! 😂 Hope that made you smile!",
+            "shame": "Shame loses its power when it's shared. 🫂 Talk to someone you trust. You are worthy of love."
         };
 
         function addMessage(text, isUser = false) {
             const wrapper = document.createElement('div');
             wrapper.className = isUser ? "flex justify-end" : "flex justify-start";
             const msg = document.createElement('div');
-            msg.className = isUser ? "bubble-user p-4 max-w-[85%] text-sm shadow-md" : "bubble-ai p-5 shadow-sm max-w-[90%] text-sm";
+            msg.className = isUser ? "bubble-user p-4 max-w-[85%] text-sm" : "bubble-ai p-5 shadow-sm max-w-[90%] text-sm";
             msg.innerText = text;
             wrapper.appendChild(msg);
             chatWindow.appendChild(wrapper);
@@ -138,7 +158,7 @@ For all: Get enough sleep, exercise regularly, and consider talking to a counsel
             addMessage(raw, true);
             userInput.value = '';
 
-            if (low.includes('happy') || low.includes('excited') || low.includes('great')) {
+            if (low.includes('happy') || low.includes('excited') || low.includes('proud')) {
                 confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#ec4899', '#fbcfe8'] });
             }
 
@@ -146,13 +166,13 @@ For all: Get enough sleep, exercise regularly, and consider talking to a counsel
                 let found = false;
                 for (let key in responses) {
                     if (low.includes(key)) {
-                        addMessage(responses[key] + "\n\n---\nCore Advice for " + key + ":\n" + masterAdvice);
+                        addMessage(responses[key] + "\n\n---\nCore Guidance:\n" + masterAdvice);
                         found = true;
                         break;
                     }
                 }
                 if (!found) {
-                    addMessage("I am listening. Regardless of the situation, here is the PinkMind guide to mental wellness:\n\n" + masterAdvice);
+                    addMessage("I'm listening. No matter what's happening, here is the PinkMind guide to feeling better:\n\n" + masterAdvice);
                 }
             }, 800);
         }

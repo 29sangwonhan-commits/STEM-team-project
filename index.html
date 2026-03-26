@@ -3,52 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindfulAI | Support</title>
+    <title>PinkMind AI</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="h-screen flex items-center justify-center p-4">
 
-    <nav class="navbar">
-        <div class="logo">MindfulAI</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#video">Support Video</a></li>
-            <li><a href="#resources">Resources</a></li>
-        </ul>
-    </nav>
+    <div id="landing-page" class="max-w-md w-full text-center space-y-10">
+        <img src="Screenshot 2026-03-16 140742.png" class="floating-img mx-auto rounded-[3rem] shadow-2xl w-40 h-40 object-cover">
+        <h1 class="text-5xl font-extrabold text-pink-600">PinkMind AI</h1>
+        <button onclick="switchToChat()" class="start-btn">Chat with us now!</button>
+    </div>
 
-    <header class="hero">
-        <img src="profile_photo.jpg" alt="Profile Photo" class="main-char">
-        <h1>Welcome to Your Safe Space</h1>
-        <p>I'm here to support you. Let's talk.</p>
-        <button class="btn-large" onclick="focusChat()">Chat With Us Now!</button>
-    </header>
+    <div id="chat-page" class="hidden w-full max-w-2xl h-[85vh] glass-container flex flex-col overflow-hidden">
+        <header class="p-6 border-b border-pink-100 flex items-center space-x-4">
+            <img src="Screenshot 2026-03-16 140742.png" class="w-12 h-12 rounded-full border-2 border-pink-300 object-cover">
+            <h2 class="font-bold text-pink-700">PinkMind Bestie</h2>
+        </header>
 
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>I am Gemini, your adaptive AI collaborator. I provide a supportive, grounded space for you to express yourself and find clarity.</p>
-    </section>
+        <main id="chat-window" class="flex-1 overflow-y-auto p-8 space-y-6"></main>
 
-    <section id="video" class="container pink-section">
-        <h2>Mental Support Video</h2>
-        <div class="video-frame">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/zt4sOjWwV3M" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-header">
-            <img src="profile_photo.jpg" alt="PFP" class="chat-pfp">
-            <span>MindfulAI Chat</span>
-        </div>
-        <div class="chat-body" id="chatMessages">
-            <div class="msg bot">Hello. I'm listening. How are you feeling right now?</div>
-        </div>
-        <div class="chat-footer">
-            <input type="text" id="userInput" placeholder="Type a message..." autocomplete="off">
-            <button id="sendBtn">Send</button>
-        </div>
+        <footer class="p-6">
+            <div class="input-wrapper">
+                <input id="user-input" type="text" placeholder="Type something...">
+                <button id="send-btn">Send</button>
+            </div>
+        </footer>
     </div>
 
     <script src="script.js"></script>

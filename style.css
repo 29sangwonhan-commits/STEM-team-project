@@ -1,35 +1,73 @@
-:root {
-    --pink: #FFD1DC;
-    --burgundy: #800020;
-    --white: #FFFFFF;
+/* Custom Styles */
+body {
+    background: linear-gradient(135deg, #fff5f8 0%, #ffe4ed 100%);
+    font-family: 'sans-serif';
 }
 
-body { font-family: 'Roboto', sans-serif; margin: 0; background-color: #FFF5F7; scroll-behavior: smooth; }
-h1, h2 { font-family: 'Bebas Neue'; color: var(--burgundy); text-align: center; }
+.glass-container {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 3rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+}
 
-.navbar { display: flex; justify-content: space-between; padding: 15px 5%; background: var(--pink); border-bottom: 2px solid var(--burgundy); }
-.nav-links { list-style: none; display: flex; gap: 20px; }
-.nav-links a { text-decoration: none; color: var(--burgundy); font-weight: bold; }
+.floating-img {
+    animation: float 3s ease-in-out infinite;
+}
 
-.hero { text-align: center; padding: 50px 20px; background: var(--pink); }
-.main-char { width: 200px; height: 200px; border-radius: 50%; border: 5px solid var(--burgundy); object-fit: cover; }
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
 
-.btn-large { background: var(--burgundy); color: white; padding: 15px 30px; border: none; border-radius: 50px; font-family: 'Bebas Neue'; font-size: 1.2rem; cursor: pointer; margin-top: 15px; }
+.start-btn {
+    background-color: #ec4899;
+    color: white;
+    padding: 1.25rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
 
-.container { padding: 40px 10%; line-height: 1.6; }
-.pink-section { background: #FFE4E9; }
-.video-frame { max-width: 560px; margin: 0 auto; border: 5px solid var(--burgundy); border-radius: 10px; overflow: hidden; }
+.start-btn:hover {
+    transform: scale(1.05);
+    background-color: #db2777;
+}
 
-/* Chatbot Styles */
-.chat-widget { position: fixed; bottom: 20px; right: 20px; width: 320px; background: white; border: 2px solid var(--burgundy); border-radius: 15px; display: flex; flex-direction: column; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-.chat-header { background: var(--burgundy); color: white; padding: 10px; display: flex; align-items: center; gap: 10px; border-radius: 12px 12px 0 0; }
-.chat-pfp { width: 35px; height: 35px; border-radius: 50%; border: 1px solid white; object-fit: cover; }
-.chat-body { height: 300px; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #FFF9FA; }
+.input-wrapper {
+    display: flex;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 2px solid #fbcfe8;
+}
 
-.msg { padding: 10px; border-radius: 10px; max-width: 80%; font-size: 0.9rem; }
-.bot { background: var(--pink); color: var(--burgundy); align-self: flex-start; }
-.user { background: var(--burgundy); color: white; align-self: flex-end; }
+#user-input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    outline: none;
+}
 
-.chat-footer { display: flex; padding: 10px; border-top: 1px solid #eee; gap: 5px; }
-#userInput { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px; outline: none; }
-#sendBtn { background: var(--burgundy); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-family: 'Bebas Neue'; }
+#send-btn {
+    background: #ec4899;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.75rem;
+}
+
+.chat-bubble-ai {
+    background: white;
+    padding: 1rem;
+    border-radius: 20px 20px 20px 4px;
+    max-width: 80%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.chat-bubble-user {
+    background: #f472b6;
+    color: white;
+    padding: 1rem;
+    border-radius: 20px 20px 4px 20px;
+    max-width: 80%;
+    margin-left: auto;
+}

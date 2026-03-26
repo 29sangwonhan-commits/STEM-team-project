@@ -1,17 +1,16 @@
-const landing = document.getElementById('landing-page');
+const mainSite = document.getElementById('main-site');
 const chatPage = document.getElementById('chat-page');
 const chatWindow = document.getElementById('chat-window');
 const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
 
-// 1. Logic to switch pages
+// Fix: The function to show the chat and hide everything else
 function switchToChat() {
-    landing.style.display = 'none';
-    chatPage.classList.remove('hidden');
-    chatPage.classList.add('flex');
+    mainSite.classList.add('hidden'); // Hides Landing + About Us
+    chatPage.classList.remove('hidden'); // Shows Chat
+    console.log("Chat started!");
 }
 
-// 2. Logic to add messages to the screen
 function addMessage(text, isUser = false) {
     const div = document.createElement('div');
     div.className = isUser ? "flex justify-end" : "flex justify-start";
@@ -25,29 +24,28 @@ function addMessage(text, isUser = false) {
     chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
-// 3. Logic for the AI to "think" and reply
 function getAIResponse(input) {
     const val = input.toLowerCase();
     
-    if (val.includes("hi") || val.includes("hello")) return "Hey there, bestie! ✨ How are you feeling?";
-    if (val.includes("test") || val.includes("grade 9")) return "You're going to slay that English test! 💅 Just keep practicing those synonyms.";
-    if (val.includes("sad") || val.includes("bad")) return "I'm so sorry. 💗 I'm here for you. Want to tell me more?";
+    if (val.includes("hi") || val.includes("hello")) return "Hey bestie! ✨ I was hoping you'd stop by. What's the tea?";
+    if (val.includes("sad") || val.includes("bad")) return "I'm so sorry. 💗 You can vent to me as long as you need. I'm listening.";
+    if (val.includes("test") || val.includes("exam")) return "Ugh, tests are the worst! But you're smart and capable. Want some quick study tips?";
     
-    return "I hear you. That sounds really interesting. Tell me more!";
+    return "I totally get that. Tell me more? 🌸";
 }
 
-// 4. Handle the Send Button
 function handleSend() {
     const text = userInput.value.trim();
     if (!text) return;
 
-    addMessage(text, true); // Add user's text
+    addMessage(text, true);
     userInput.value = '';
 
+    // AI Delay
     setTimeout(() => {
         const response = getAIResponse(text);
-        addMessage(response, false); // Add AI's text
-    }, 800);
+        addMessage(response, false);
+    }, 1000);
 }
 
 sendBtn.addEventListener('click', handleSend);

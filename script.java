@@ -1,16 +1,12 @@
-// ELEMENTS
 const chatWindow = document.getElementById('chat-window');
 const userInput = document.getElementById('user-input');
-const sendBtn = document.getElementById('send-btn');
-const contactBtn = document.getElementById('contact-btn');
 
-// ADVICE FOOTER
 const masterAdvice = `Depression: Talk to someone you trust, get sunlight, and do small activities.
 Anger: Take deep breaths, step away, and count to 10.
 Anxiety: Focus on slow breathing and break tasks into small steps.
 For all: Get enough sleep, exercise, and consider talking to a counselor.`;
 
-// FULL 50+ RESPONSE DATABASE
+// THE FULL 50+ RESPONSE DATABASE RESTORED
 const responses = {
     "happy": "That is wonderful! 💖 Happiness looks good on you. Try to share a smile with someone today!",
     "excited": "I love that energy! ✨ Channel it into a project or a dance break. You're glowing!",
@@ -63,7 +59,6 @@ const responses = {
     "shame": "Shame loses its power when it's shared. 🫂 Talk to someone you trust. You are worthy."
 };
 
-// MESSAGE HANDLING
 function addMessage(text, isUser = false) {
     const div = document.createElement('div');
     div.className = isUser ? "flex justify-end" : "flex justify-start";
@@ -79,40 +74,41 @@ function handleSend() {
     const text = userInput.value.trim();
     if (!text) return;
 
-    addMessage(text, true); // SENDS WHAT PEOPLE TYPED
+    addMessage(text, true); // This sends what the user typed
     userInput.value = '';
 
     const low = text.toLowerCase();
     
-    // Confetti trigger
     if (low.includes('happy') || low.includes('excited') || low.includes('proud')) {
         confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
     }
 
     setTimeout(() => {
-        let response = "I hear you. 🌸 Tell me more? Here is some guidance:\n\n" + masterAdvice;
+        let found = false;
         for (let key in responses) {
             if (low.includes(key)) {
-                response = responses[key] + "\n\n---\nPinkMind Guide:\n" + masterAdvice;
+                addMessage(responses[key] + "\n\n---\nPinkMind Guide:\n" + masterAdvice);
+                found = true;
                 break;
             }
         }
-        addMessage(response, false);
+        if (!found) {
+            addMessage("I hear you. 🌸 Tell me more? Here is some guidance:\n\n" + masterAdvice);
+        }
     }, 800);
 }
 
-// CONTACT FORM "SENT!" LOGIC
-contactBtn.addEventListener('click', () => {
-    contactBtn.innerText = "SENT! ✅";
-    contactBtn.style.backgroundColor = "#4ade80"; 
+// Fixed Contact Us "SENT!" logic
+function sendContact() {
+    const btn = document.getElementById('contact-btn');
+    btn.innerText = "SENT! ✅";
+    btn.style.backgroundColor = "#4ade80"; 
     alert("SENT! Kai and Jiwon have received your message.");
     
     setTimeout(() => {
-        contactBtn.innerText = "Send Message";
-        contactBtn.style.backgroundColor = "#ec4899";
+        btn.innerText = "Send Message";
+        btn.style.backgroundColor = "#ec4899";
     }, 3000);
-});
+}
 
-// LISTENERS
-sendBtn.addEventListener('click', handleSend);
 userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });

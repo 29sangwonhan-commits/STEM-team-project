@@ -8,7 +8,6 @@ body {
 .glass {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 .glass-container {
@@ -17,23 +16,12 @@ body {
     border-radius: 3rem;
 }
 
-.floating-img {
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
 .chat-bubble-ai {
     background: white;
     padding: 1rem 1.5rem;
     border-radius: 1.5rem 1.5rem 1.5rem 0.2rem;
     max-width: 80%;
     border: 1px solid #fce7f3;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    font-size: 0.9rem;
     white-space: pre-line;
 }
 
@@ -43,13 +31,13 @@ body {
     padding: 1rem 1.5rem;
     border-radius: 1.5rem 1.5rem 0.2rem 1.5rem;
     max-width: 80%;
-    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
-    font-size: 0.9rem;
 }
 
-.input-wrapper {
-    background: white;
-    padding: 0.5rem;
-    border-radius: 1.5rem;
-    border: 2px solid #fdf2f8;
+.floating-img {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }

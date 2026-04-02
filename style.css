@@ -1,43 +1,88 @@
+/* Custom Fonts and Base Styles */
 body {
     background: linear-gradient(135deg, #fff5f8 0%, #ffe4ed 100%);
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #4b5563;
     scroll-behavior: smooth;
+    margin: 0;
 }
 
-.glass {
-    background: rgba(255, 255, 255, 0.6);
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid #fce7f3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
 }
 
-.glass-container {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(20px);
-    border-radius: 3rem;
+.nav-links a {
+    text-decoration: none;
+    color: #db2777;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    margin-left: 2rem;
+    transition: color 0.3s ease;
 }
 
-.chat-bubble-ai {
+.nav-links a:hover {
+    color: #ec4899;
+}
+
+/* Chat Bubbles */
+.bubble-ai {
     background: white;
-    padding: 1rem 1.5rem;
-    border-radius: 1.5rem 1.5rem 1.5rem 0.2rem;
-    max-width: 80%;
+    border-radius: 22px 22px 22px 5px;
     border: 1px solid #fce7f3;
-    white-space: pre-line;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    max-width: 90%;
+    font-size: 0.875rem;
+    line-height: 1.6;
 }
 
-.chat-bubble-user {
+.bubble-user {
     background: #ec4899;
     color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 1.5rem 1.5rem 0.2rem 1.5rem;
-    max-width: 80%;
+    border-radius: 22px 22px 5px 22px;
+    padding: 1rem;
+    max-width: 85%;
+    font-size: 0.875rem;
+    box-shadow: 0 10px 15px rgba(236, 72, 153, 0.2);
 }
 
-.floating-img {
+/* Glass & Animations */
+.glass-chat {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 2px solid white;
+    border-radius: 2.5rem;
+    box-shadow: 0 25px 60px rgba(244, 114, 182, 0.2);
+}
+
+.floating {
     animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Scrollbar */
+#chat-window::-webkit-scrollbar {
+    width: 4px;
+}
+
+#chat-window::-webkit-scrollbar-thumb {
+    background: #fbcfe8;
+    border-radius: 10px;
 }

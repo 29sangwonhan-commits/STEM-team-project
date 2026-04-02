@@ -30,16 +30,14 @@
                 <div id="chat-window" class="flex-1 overflow-y-auto p-6 space-y-6 bg-white/30">
                     <div class="flex justify-start">
                         <div class="chat-bubble-ai">
-                            Hello! 🌸 I am PinkMind AI. Kai and Jiwon programmed me to support you.
-                            
-                            How are you feeling today?
+                            Hello! 🌸 I am PinkMind AI. Kai and Jiwon programmed me to support you. How are you feeling today?
                         </div>
                     </div>
                 </div>
                 <div class="p-5 bg-white/80 border-t border-pink-100">
                     <div class="input-wrapper flex gap-2">
                         <input id="user-input" type="text" placeholder="Type what you feel..." class="flex-1 outline-none p-2 bg-transparent" autocomplete="off">
-                        <button id="send-btn" class="bg-pink-500 text-white px-6 py-2 rounded-xl font-bold hover:bg-pink-600 transition active:scale-95">Send ✨</button>
+                        <button onclick="handleSend()" class="bg-pink-500 text-white px-6 py-2 rounded-xl font-bold hover:bg-pink-600 transition active:scale-95">Send ✨</button>
                     </div>
                 </div>
             </div>
@@ -48,32 +46,20 @@
         <section id="about-section" class="max-w-4xl mx-auto px-6 py-24 border-t border-pink-100">
             <div class="glass-container p-12 rounded-[3.5rem] shadow-2xl text-center border-2 border-white">
                 <h2 class="text-4xl font-extrabold text-pink-600 mb-8">About Us</h2>
-                
                 <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
                     <div class="bg-white/80 p-6 rounded-3xl shadow-sm border border-pink-50">
                         <h3 class="font-bold text-pink-500 mb-2 text-lg">Our Story 🎯</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            We are <strong>Kai and Jiwon</strong>, Grade 9 students from <strong>Forest City International School</strong>. 
-                            We built PinkMind AI to ensure no student feels alone.
-                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed">We are <strong>Kai and Jiwon</strong> from Grade 9 at <strong>Forest City International School</strong>. We built PinkMind AI so no one has to struggle alone.</p>
                     </div>
                     <div class="bg-white/80 p-6 rounded-3xl shadow-sm border border-pink-50">
                         <h3 class="font-bold text-pink-500 mb-2 text-lg">Our Tech 🌸</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Using a massive database of coping strategies, our AI is designed to give you instant support for stress, anxiety, and school pressure.
-                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed">Our AI uses a massive database to provide instant coping strategies for school stress and anxiety.</p>
                     </div>
                 </div>
 
                 <div class="relative overflow-hidden w-full pt-[56.25%] rounded-[2.5rem] shadow-2xl border-8 border-white mb-8">
-                    <iframe class="absolute top-0 left-0 w-full h-full" 
-                            src="https://drive.google.com/file/d/1Nwj13pOpgP8MD1SGUj3iDMhHsf6O9Dll/preview" 
-                            allow="autoplay" 
-                            frameborder="0">
-                    </iframe>
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://drive.google.com/file/d/1Nwj13pOpgP8MD1SGUj3iDMhHsf6O9Dll/preview" allow="autoplay" frameborder="0"></iframe>
                 </div>
-
-                <p class="text-gray-500 text-lg italic">"You are never alone when you have a bestie in your browser."</p>
             </div>
         </section>
 
@@ -82,17 +68,16 @@
                 <h2 class="text-3xl font-extrabold text-pink-600 mb-4">Contact Us</h2>
                 <p class="text-pink-500 font-bold mb-8 text-lg">📞 Call us: +39-0458126418</p>
                 <div class="space-y-4 text-left">
-                    <input type="text" placeholder="Name" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-300 transition">
-                    <input type="email" placeholder="Email" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-300 transition">
-                    <textarea placeholder="Your Message" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-300 transition h-32"></textarea>
-                    <button type="button" id="contact-btn" class="start-btn w-full bg-pink-500 text-white font-bold py-4 rounded-2xl transition">Send Message</button>
+                    <input type="text" placeholder="Name" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-300">
+                    <textarea placeholder="Message" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-300 h-32"></textarea>
+                    <button type="button" id="contact-btn" onclick="sendContact()" class="w-full bg-pink-500 text-white font-bold py-4 rounded-2xl transition">Send Message</button>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="py-12 text-center text-pink-300 text-[10px] font-bold uppercase tracking-[0.3em]">
-        PinkMind AI &copy; 2026 • Grade 9 Project • FCIS
+        PinkMind AI &copy; 2026 • Grade 9 • FCIS
     </footer>
 
     <script src="script.js"></script>

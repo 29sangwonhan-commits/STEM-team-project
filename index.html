@@ -3,193 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PinkMind AI | The Ultimate Support</title>
+    <title>PinkMind AI | Global Mental Health Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(135deg, #fff5f8 0%, #ffe4ed 100%); color: #4b5563; scroll-behavior: smooth; }
-        .glass-chat { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 2px solid white; border-radius: 2.5rem; box-shadow: 0 25px 60px rgba(244, 114, 182, 0.2); }
-        .floating { animation: float 3s ease-in-out infinite; cursor: pointer; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-        .bubble-ai { background: white; border-radius: 22px 22px 22px 5px; border: 1px solid #fce7f3; line-height: 1.6; white-space: pre-line; }
-        .bubble-user { background: #ec4899; color: white; border-radius: 22px 22px 5px 22px; }
-        #chat-window::-webkit-scrollbar { width: 4px; }
-        #chat-window::-webkit-scrollbar-thumb { background: #fbcfe8; border-radius: 10px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <section class="flex flex-col items-center py-12 px-4">
-        <a href="#about-section">
-            <img src="Screenshot 2026-03-16 140742.png" title="Click to see About Us" class="floating w-36 h-36 rounded-[2.8rem] shadow-2xl mb-6 object-cover border-4 border-white">
-        </a>
-        <h1 class="text-4xl font-extrabold text-pink-600 mb-2">PinkMind AI</h1>
-        <p class="text-pink-400 font-medium mb-10 text-center uppercase tracking-widest text-xs">Empowering Grade 9 Mental Wellness</p>
+    <nav class="fixed top-0 w-full z-50 glass py-4 px-8 flex justify-between items-center border-b border-pink-100">
+        <div class="font-extrabold text-pink-600 text-xl">PinkMind AI</div>
+        <ul class="flex space-x-6 text-sm font-bold text-pink-500 uppercase tracking-wider">
+            <li><a href="#home-section" class="hover:text-pink-700 transition">Home</a></li>
+            <li><a href="#about-section" class="hover:text-pink-700 transition">About Us</a></li>
+            <li><a href="#contact-section" class="hover:text-pink-700 transition">Contact Us</a></li>
+        </ul>
+    </nav>
 
-        <div class="w-full max-w-2xl h-[650px] glass-chat flex flex-col overflow-hidden mb-16">
+    <div id="main-site">
+        <section id="home-section" class="flex flex-col items-center pt-32 pb-12 px-4 text-center">
+            <img src="Screenshot 2026-03-16 140742.png" class="floating-img w-36 h-36 rounded-[2.8rem] shadow-2xl mb-6 object-cover border-4 border-white">
+            <h1 class="text-4xl font-extrabold text-pink-600 mb-2">Global Mental Health Center</h1>
+            <p class="text-pink-400 font-medium mb-10 uppercase tracking-widest text-xs">Empowering Grade 9 Mental Wellness</p>
+            <button onclick="switchToChat()" class="start-btn">Start Chatting ✨</button>
+        </section>
+
+        <section id="about-section" class="max-w-4xl mx-auto px-6 py-24 border-t border-pink-100">
+            <div class="glass-container p-12 rounded-[3.5rem] shadow-2xl text-center border-2 border-white">
+                <h2 class="text-4xl font-extrabold text-pink-600 mb-8">About PinkMind</h2>
+                <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
+                    <div class="bg-white/80 p-6 rounded-3xl shadow-sm">
+                        <h3 class="font-bold text-pink-500 mb-2 text-lg">Who We Are 🎯</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            We are <strong>Kai and Jiwon</strong>, Grade 9 students from <strong>Forest City International School</strong>. 
+                            We built PinkMind AI as a Global Mental Health Center project to support our peers.
+                        </p>
+                    </div>
+                    <div class="bg-white/80 p-6 rounded-3xl shadow-sm">
+                        <h3 class="font-bold text-pink-500 mb-2 text-lg">Our Goal 🌸</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            We believe technology should be kind. Our AI is designed to provide instant, science-backed coping strategies to help students navigate their toughest days in a safe way.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-gray-500 text-lg italic">"You are never alone when you have a bestie in your browser."</p>
+            </div>
+        </section>
+
+        <section id="contact-section" class="max-w-2xl mx-auto px-6 py-24 mb-20">
+            <div class="glass-container p-10 border-2 border-white text-center">
+                <h2 class="text-3xl font-extrabold text-pink-600 mb-6">Contact Us</h2>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Name" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-200">
+                    <input type="email" placeholder="Email" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-200">
+                    <textarea placeholder="Your Message" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-200 h-32"></textarea>
+                    <button type="button" onclick="alert('Message sent to Kai and Jiwon!')" class="start-btn w-full">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div id="chat-page" class="hidden flex flex-col items-center py-24 px-4 min-h-screen">
+        <div class="w-full max-w-2xl h-[650px] glass-container flex flex-col overflow-hidden shadow-2xl border-4 border-white">
             <div id="chat-window" class="flex-1 overflow-y-auto p-6 space-y-6">
                 <div class="flex justify-start">
-                    <div class="bubble-ai p-4 shadow-sm max-w-[90%] text-sm">
-                        Hello! 🌸 I am PinkMind AI. I have been programmed with a massive database to help you with 150+ different conditions. 
+                    <div class="chat-bubble-ai">
+                        Hello! 🌸 I am PinkMind AI. Kai and Jiwon programmed me with a massive database to support you.
                         
-                        Whether it's school stress, friendship drama, or just needing a boost, I'm here. How are you feeling?
+                        How are you feeling?
                     </div>
                 </div>
             </div>
-
             <div class="p-5 bg-white/60 border-t border-pink-50">
-                <div class="flex items-center space-x-2 bg-white rounded-2xl p-2 border-2 border-pink-100">
-                    <input id="user-input" type="text" placeholder="Type a feeling or a condition..." class="bg-transparent flex-1 px-4 py-2 outline-none text-gray-700 text-sm">
-                    <button id="send-btn" class="bg-pink-500 text-white px-6 py-2 rounded-xl font-bold hover:scale-105 transition">Send</button>
+                <div class="input-wrapper">
+                    <input id="user-input" type="text" placeholder="Type a feeling or a condition...">
+                    <button id="send-btn">Send</button>
                 </div>
+                <button onclick="location.reload()" class="text-xs text-pink-400 mt-4 block text-center w-full uppercase font-bold">← Back to Home</button>
             </div>
         </div>
-    </section>
-
-    <section id="about-section" class="max-w-4xl mx-auto px-6 py-24 border-t border-pink-100">
-        <div class="bg-white/50 backdrop-blur-xl p-12 rounded-[3.5rem] shadow-2xl text-center border-2 border-white">
-            <h2 class="text-4xl font-extrabold text-pink-600 mb-8">About PinkMind</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
-                <div class="bg-white/80 p-6 rounded-3xl shadow-sm">
-                    <h3 class="font-bold text-pink-500 mb-2 text-lg">Our Mission 🎯</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">PinkMind AI was created as a Grade 9 project to bridge the gap between students and mental health support. We provide a safe, judgment-free zone where technology meets empathy.</p>
-                </div>
-                <div class="bg-white/80 p-6 rounded-3xl shadow-sm">
-                    <h3 class="font-bold text-pink-500 mb-2 text-lg">Why We Exist 🌸</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Many students face stress, anxiety, and loneliness in silence. Our AI is designed to provide instant, science-backed coping strategies to help you navigate your toughest days.</p>
-                </div>
-            </div>
-
-            <p class="text-gray-500 text-lg mb-12 italic">"You are never alone when you have a bestie in your browser."</p>
-
-            <div class="relative overflow-hidden w-full pt-[56.25%] rounded-[2rem] shadow-2xl border-8 border-white mb-6">
-                <iframe class="absolute top-0 left-0 w-full h-full" 
-                        src="https://drive.google.com/file/d/1Nwj13pOpgP8MD1SGUj3iDMhHsf6O9Dll/preview" 
-                        allow="autoplay" 
-                        frameborder="0">
-                </iframe>
-            </div>
-            <p class="text-pink-300 text-xs font-bold uppercase tracking-widest mt-4 italic text-center">From Burnout to Breakthrough </p>
-        </div>
-    </section>
+    </div>
 
     <footer class="py-12 text-center text-pink-300 text-[10px] font-bold uppercase tracking-widest">
-        PinkMind AI &copy; 2026 • Your Safe Space
+        PinkMind AI &copy; 2026 • Global Mental Health Center • FCIS
     </footer>
 
-    <script>
-        const chatWindow = document.getElementById('chat-window');
-        const userInput = document.getElementById('user-input');
-        const sendBtn = document.getElementById('send-btn');
-
-        const masterAdvice = `Depression: Talk to someone you trust, get sunlight, and do small activities like walking or listening to music.
-Anger: Take deep breaths, step away from the situation, and count to 10 before reacting.
-Anxiety: Focus on slow breathing, write down your worries, and break tasks into small steps.
-Nervousness: Practice what you are worried about, relax your muscles, and think positive thoughts.
-For all: Get enough sleep, exercise regularly, and consider talking to a counselor or therapist.`;
-
-        // 150+ RESPONSE DATABASE 
-        const responses = {
-            "happy": "That is wonderful! 💖 Happiness looks good on you. Try to share a smile with someone today!",
-            "excited": "I love that energy! ✨ Channel it into a project or a dance break. You're glowing!",
-            "sad": "I'm sending you a huge digital hug. 💗 It's okay to feel this way. Be gentle with yourself today.",
-            "tired": "You've been doing a lot. 🛌 It's time to recharge. Take a break from your phone and just breathe.",
-            "bored": "Boredom is the spark for creativity! 🎨 Try sketching something or learning a new skill on YouTube.",
-            "stress": "Stress is heavy, but you are stronger. 🌬️ Try the '4-7-8' breathing method to calm your nervous system.",
-            "exam": "You are more than a grade! 📖 Study in small chunks and remember to hydrate. You've got this!",
-            "lonely": "I am right here! 🫂 Try reaching out to a friend or listening to your favorite podcast for company.",
-            "angry": "Deep breaths... 😤 Try writing down your anger on paper and then safely ripping it up to release the energy.",
-            "scared": "You are safe. 🛡️ Try to name 5 things you can see right now to bring your mind back to the present.",
-            "invisible": "I see you and you matter! 🌟 Your voice is important. Don't be afraid to take up space.",
-            "phone": "A digital detox might be exactly what you need. 📱 Set your phone aside for 30 minutes and look at the real world.",
-            "bullying": "You deserve to be safe and respected. 🛑 Please tell a teacher or a trusted adult immediately. You are not alone.",
-            "friend": "Friendship has its ups and downs. 🎀 Honest talk is usually the best way to fix things. Take your time.",
-            "family": "Family can be tough to navigate. 🏠 Find your own quiet corner to relax and be yourself.",
-            "body": "Your body is amazing for all it does! 🌸 Treat it with kindness and remember that beauty comes from within.",
-            "future": "The future is full of possibilities. 🌈 Don't stress about the 'when'—just focus on your 'now'.",
-            "failure": "Failure is just a stepping stone to success. 🎓 Every mistake is a lesson learned. Keep going!",
-            "worthless": "You are incredibly valuable. 🕊️ The world is a better place because you are in it. Never forget that.",
-            "anxious": "Anxiety is just a feeling, not your reality. 🌬️ Focus on your breathing and know that this will pass.",
-            "nervous": "Nervousness means you care! 🎡 Use that adrenaline to power through your challenge.",
-            "motivation": "Motivation starts with one small step. 🚀 Just do one tiny task to get the momentum going.",
-            "heartbreak": "Time is a great healer. 💔 Be patient with your heart and surround yourself with people who love you.",
-            "english": "For your English test: 📝 Focus on your clear points and evidence. You're going to do great!",
-            "math": "Math is just logic. 🔢 Take it one step at a time and don't be afraid to ask for help.",
-            "science": "Stay curious! 🧪 The world is full of wonder. You're doing a great job learning.",
-            "gym": "Exercise is a great mood booster! 🏋️‍♂️ Even a quick walk can change your perspective.",
-            "music": "Let the music heal you! 🎧 Put on your favorite song and let the rhythm lift your spirits.",
-            "thanks": "You are so welcome! 💖 I'm always here if you need to talk again.",
-            "hello": "Hi bestie! ✨ I'm PinkMind. How can I support your mental wellness today?",
-            "weather": "Rain or shine, you can have a great day. ☀️ If it's raining, enjoy the cozy vibes!",
-            "parents": "Communicating with parents can be hard. 🏠 Try to stay calm and explain how you feel honestly.",
-            "grades": "Your grades are just a snapshot of one moment. 📝 Your character and kindness matter so much more.",
-            "internet": "The internet is a tool—use it for good! 🌐 Remember to take breaks and stay safe online.",
-            "guilty": "We all make mistakes. 🕊️ Learn the lesson and let go of the shame. You are a work in progress.",
-            "confused": "It's okay to not have all the answers yet. 🧩 Life is a journey of discovery. Take your time.",
-            "creative": "Your creativity is your superpower! 🎭 Use it to express yourself and color your world.",
-            "hope": "Always keep hope in your heart. 🕯️ Better things are coming your way, I promise.",
-            "proud": "I am so proud of you! 🌟 Celebrate your wins, no matter how small they may seem.",
-            "crying": "Crying is a healthy release. 🌊 Let it out and then take a deep breath. You'll feel better soon.",
-            "annoyed": "Deep breaths... 🙄 Don't let the small things ruin your day. You're bigger than this annoyance.",
-            "social": "Social situations can be tricky. 🎡 Just be yourself—that's the best person you can be!",
-            "regret": "Don't let the past weigh you down. 🕊️ You are growing and changing every single day. Look forward!",
-            "money": "Financial stress is tough. 💸 Focus on the simple, free joys in life while you work things out.",
-            "advice": "My advice? 💡 Be your own best friend. Speak to yourself with the same love you give others.",
-            "help": "I'm here! 🆘 If you need urgent help, reach out to a professional or a helpline immediately. You matter!",
-            "joke": "Why don't skeletons fight each other? Because they don't have the guts! 😂 Hope that made you smile!",
-            "shame": "Shame loses its power when it's shared. 🫂 Talk to someone you trust. You are worthy of love."
-        };
-
-        function addMessage(text, isUser = false) {
-            const wrapper = document.createElement('div');
-            wrapper.className = isUser ? "flex justify-end" : "flex justify-start";
-            const msg = document.createElement('div');
-            msg.className = isUser ? "bubble-user p-4 max-w-[85%] text-sm" : "bubble-ai p-5 shadow-sm max-w-[90%] text-sm";
-            msg.innerText = text;
-            wrapper.appendChild(msg);
-            chatWindow.appendChild(wrapper);
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        }
-
-        function handleSend() {
-            const raw = userInput.value.trim();
-            const low = raw.toLowerCase();
-            if (!raw) return;
-
-            addMessage(raw, true);
-            userInput.value = '';
-
-            if (low.includes('happy') || low.includes('excited') || low.includes('proud')) {
-                confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#ec4899', '#fbcfe8'] });
-            }
-
-            setTimeout(() => {
-                let found = false;
-                for (let key in responses) {
-                    if (low.includes(key)) {
-                        addMessage(responses[key] + "\n\n---\nCore Guidance:\n" + masterAdvice);
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
-                    addMessage("I'm listening. No matter what's happening, here is the PinkMind guide to feeling better:\n\n" + masterAdvice);
-                }
-            }, 800);
-        }
-
-        sendBtn.addEventListener('click', handleSend);
-        userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
-    </script>
-    <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
+    <script src="script.js"></script>
 </body>
 </html>

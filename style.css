@@ -36,11 +36,6 @@ body {
     border: none;
 }
 
-.start-btn:hover {
-    background-color: #db2777;
-    transform: scale(1.02);
-}
-
 .input-wrapper {
     display: flex;
     background: white;
@@ -54,14 +49,6 @@ body {
     padding: 0.75rem 1rem;
     outline: none;
     background: transparent;
-}
-
-#send-btn {
-    background: #ec4899;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 1rem;
-    font-weight: bold;
 }
 
 .chat-bubble-ai {

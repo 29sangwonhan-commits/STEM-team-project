@@ -1,16 +1,12 @@
-const mainSite = document.getElementById('main-site');
-const chatPage = document.getElementById('chat-page');
 const chatWindow = document.getElementById('chat-window');
 const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
 
-// Core advice to append to responses
 const masterAdvice = `Depression: Talk to someone you trust, get sunlight, and do small activities.
 Anger: Take deep breaths, step away, and count to 10.
 Anxiety: Focus on slow breathing and break tasks into small steps.
 For all: Get enough sleep, exercise, and consider talking to a counselor.`;
 
-// THE FULL 50+ RESPONSE DATABASE
 const responses = {
     "happy": "That is wonderful! 💖 Happiness looks good on you. Try to share a smile with someone today!",
     "excited": "I love that energy! ✨ Channel it into a project or a dance break. You're glowing!",
@@ -41,7 +37,7 @@ const responses = {
     "gym": "Exercise is a great mood booster! 🏋️‍♂️ Even a quick walk can change your perspective.",
     "music": "Let the music heal you! 🎧 Put on your favorite song and let the rhythm lift you up.",
     "thanks": "You are so welcome! 💖 I'm always here if you need to talk again.",
-    "hello": "Hi bestie! ✨ I'm PinkMind. How can I support your mental wellness today?",
+    "hello": "Hi bestie! ✨ I'm Pink Mind AI. How can I support your mental wellness today?",
     "hi": "Hey there! ✨ What's on your mind? I'm here to listen.",
     "weather": "Rain or shine, you can have a great day. ☀️ If it's raining, enjoy the cozy vibes!",
     "parents": "Communicating with parents can be hard. 🏠 Try to stay calm and explain how you feel.",
@@ -63,12 +59,6 @@ const responses = {
     "shame": "Shame loses its power when it's shared. 🫂 Talk to someone you trust. You are worthy."
 };
 
-function switchToChat() {
-    mainSite.classList.add('hidden');
-    chatPage.classList.remove('hidden');
-    window.scrollTo(0, 0);
-}
-
 function addMessage(text, isUser = false) {
     const div = document.createElement('div');
     div.className = isUser ? "flex justify-end" : "flex justify-start";
@@ -88,25 +78,23 @@ function handleSend() {
     addMessage(text, true);
     userInput.value = '';
 
-    // Celebration effect
     if (low.includes('happy') || low.includes('excited') || low.includes('proud')) {
         confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#ec4899', '#fbcfe8'] });
     }
 
-    // AI Logic: Find matching keyword in the database
     setTimeout(() => {
         let found = false;
         for (let key in responses) {
             if (low.includes(key)) {
-                addMessage(responses[key] + "\n\n---\nPinkMind Guidance:\n" + masterAdvice);
+                addMessage(responses[key] + "\n\n---\nPink Mind Guidance:\n" + masterAdvice);
                 found = true;
                 break;
             }
         }
         if (!found) {
-            addMessage("I'm listening. No matter what's happening, here is the PinkMind guide to feeling better:\n\n" + masterAdvice);
+            addMessage("I'm listening. No matter what's happening, here is the Pink Mind guide to feeling better:\n\n" + masterAdvice);
         }
-    }, 1000);
+    }, 800);
 }
 
 sendBtn.addEventListener('click', handleSend);

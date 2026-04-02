@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PinkMind AI | Global Mental Health Center</title>
+    <title>Pink Mind AI | Global Mental Health Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
 
     <nav class="fixed top-0 w-full z-50 glass py-4 px-8 flex justify-between items-center border-b border-pink-100">
-        <div class="font-extrabold text-pink-600 text-xl">PinkMind AI</div>
+        <div class="font-extrabold text-pink-600 text-xl">Pink Mind AI</div>
         <ul class="flex space-x-6 text-sm font-bold text-pink-500 uppercase tracking-wider">
             <li><a href="#home-section" class="hover:text-pink-700 transition">Home</a></li>
             <li><a href="#about-section" class="hover:text-pink-700 transition">About Us</a></li>
@@ -20,29 +20,46 @@
         </ul>
     </nav>
 
-    <div id="main-site">
+    <main id="main-content">
         <section id="home-section" class="flex flex-col items-center pt-32 pb-12 px-4 text-center">
             <img src="Screenshot 2026-03-16 140742.png" class="floating-img w-36 h-36 rounded-[2.8rem] shadow-2xl mb-6 object-cover border-4 border-white">
             <h1 class="text-4xl font-extrabold text-pink-600 mb-2">Global Mental Health Center</h1>
             <p class="text-pink-400 font-medium mb-10 uppercase tracking-widest text-xs">Empowering Grade 9 Mental Wellness</p>
-            <button onclick="switchToChat()" class="start-btn">Start Chatting ✨</button>
+
+            <div class="w-full max-w-2xl h-[600px] glass-container flex flex-col overflow-hidden shadow-2xl border-4 border-white mb-16 text-left">
+                <div id="chat-window" class="flex-1 overflow-y-auto p-6 space-y-6">
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-ai">
+                            Hello! 🌸 I am Pink Mind AI. Kai and Jiwon from Grade 9 programmed me with a massive database to support you.
+                            
+                            How are you feeling today?
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5 bg-white/60 border-t border-pink-50">
+                    <div class="input-wrapper">
+                        <input id="user-input" type="text" placeholder="Type a feeling or a condition..." autocomplete="off">
+                        <button id="send-btn">Send ✨</button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="about-section" class="max-w-4xl mx-auto px-6 py-24 border-t border-pink-100">
             <div class="glass-container p-12 rounded-[3.5rem] shadow-2xl text-center border-2 border-white">
-                <h2 class="text-4xl font-extrabold text-pink-600 mb-8">About PinkMind</h2>
+                <h2 class="text-4xl font-extrabold text-pink-600 mb-8">About Pink Mind</h2>
                 <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
                     <div class="bg-white/80 p-6 rounded-3xl shadow-sm">
                         <h3 class="font-bold text-pink-500 mb-2 text-lg">Who We Are 🎯</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">
                             We are <strong>Kai and Jiwon</strong>, Grade 9 students from <strong>Forest City International School</strong>. 
-                            We built PinkMind AI as a Global Mental Health Center project to support our peers.
+                            We created Pink Mind AI to be a safe haven for students everywhere.
                         </p>
                     </div>
                     <div class="bg-white/80 p-6 rounded-3xl shadow-sm">
-                        <h3 class="font-bold text-pink-500 mb-2 text-lg">Our Goal 🌸</h3>
+                        <h3 class="font-bold text-pink-500 mb-2 text-lg">Our Vision 🌸</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">
-                            We believe technology should be kind. Our AI is designed to provide instant, science-backed coping strategies to help students navigate their toughest days in a safe way.
+                            Mental wellness shouldn't be hard to find. Our AI provides instant, empathetic support to help you navigate school stress and personal challenges.
                         </p>
                     </div>
                 </div>
@@ -50,10 +67,11 @@
             </div>
         </section>
 
-        <section id="contact-section" class="max-w-2xl mx-auto px-6 py-24 mb-20">
+        <section id="contact-section" class="max-w-2xl mx-auto px-6 py-24">
             <div class="glass-container p-10 border-2 border-white text-center">
-                <h2 class="text-3xl font-extrabold text-pink-600 mb-6">Contact Us</h2>
-                <form class="space-y-4">
+                <h2 class="text-3xl font-extrabold text-pink-600 mb-4">Contact Us</h2>
+                <p class="text-pink-500 font-bold mb-8 text-lg">📞 Call us: +39-0458126418</p>
+                <form class="space-y-4 text-left">
                     <input type="text" placeholder="Name" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-200">
                     <input type="email" placeholder="Email" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-200">
                     <textarea placeholder="Your Message" class="w-full p-4 rounded-2xl border-2 border-pink-50 outline-none focus:border-pink-200 h-32"></textarea>
@@ -61,31 +79,10 @@
                 </form>
             </div>
         </section>
-    </div>
-
-    <div id="chat-page" class="hidden flex flex-col items-center py-24 px-4 min-h-screen">
-        <div class="w-full max-w-2xl h-[650px] glass-container flex flex-col overflow-hidden shadow-2xl border-4 border-white">
-            <div id="chat-window" class="flex-1 overflow-y-auto p-6 space-y-6">
-                <div class="flex justify-start">
-                    <div class="chat-bubble-ai">
-                        Hello! 🌸 I am PinkMind AI. Kai and Jiwon programmed me with a massive database to support you.
-                        
-                        How are you feeling?
-                    </div>
-                </div>
-            </div>
-            <div class="p-5 bg-white/60 border-t border-pink-50">
-                <div class="input-wrapper">
-                    <input id="user-input" type="text" placeholder="Type a feeling or a condition...">
-                    <button id="send-btn">Send</button>
-                </div>
-                <button onclick="location.reload()" class="text-xs text-pink-400 mt-4 block text-center w-full uppercase font-bold">← Back to Home</button>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <footer class="py-12 text-center text-pink-300 text-[10px] font-bold uppercase tracking-widest">
-        PinkMind AI &copy; 2026 • Global Mental Health Center • FCIS
+        Pink Mind AI &copy; 2026 • Global Mental Health Center • FCIS
     </footer>
 
     <script src="script.js"></script>

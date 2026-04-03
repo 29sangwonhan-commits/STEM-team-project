@@ -86,8 +86,12 @@
             <div class="mb-10 p-6 bg-pink-50 rounded-3xl border border-pink-100">
                 <h3 class="text-pink-600 font-bold text-xl mb-2">Meet the Creators</h3>
                 <p class="text-gray-700 italic">Created by <strong>Kai and Jiwon</strong></p>
-                <p class="text-gray-500 text-sm">Grade 9 • Forest City International School</p>
-            </div>
+                <p class="text-gray-500 text-sm mb-4">Grade 9 • Forest City International School</p>
+                <div class="flex flex-col gap-2 mt-4 text-sm font-semibold">
+                    <a href="mailto:29sangwon.han@cats-fc.org" class="text-pink-500 hover:text-pink-700 transition">📧 29sangwon.han@cats-fc.org</a>
+                    <a href="mailto:29jiwon.yoon@cats-fc.org" class="text-pink-500 hover:text-pink-700 transition">📧 29jiwon.yoon@cats-fc.org</a>
+                </div>
+                </div>
 
             <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
                 <div class="bg-white/80 p-6 rounded-3xl shadow-sm">
@@ -138,102 +142,54 @@ Anger: Take deep breaths and count to 10 before reacting.
 Anxiety: Focus on slow breathing and break tasks into small steps.
 For all: Get enough sleep and consider talking to a counselor.`;
 
-        // Your 150+ Response Database
         const responses = {
-              "happy": "That is wonderful! 💖 Happiness looks good on you. Try to share a smile with someone today!",
-
+            "happy": "That is wonderful! 💖 Happiness looks good on you. Try to share a smile with someone today!",
             "excited": "I love that energy! ✨ Channel it into a project or a dance break. You're glowing!",
-
             "sad": "I'm sending you a huge digital hug. 💗 It's okay to feel this way. Be gentle with yourself today.",
-
             "tired": "You've been doing a lot. 🛌 It's time to recharge. Take a break from your phone and just breathe.",
-
             "bored": "Boredom is the spark for creativity! 🎨 Try sketching something or learning a new skill on YouTube.",
-
             "stress": "Stress is heavy, but you are stronger. 🌬️ Try the '4-7-8' breathing method to calm your nervous system.",
-
             "exam": "You are more than a grade! 📖 Study in small chunks and remember to hydrate. You've got this!",
-
             "lonely": "I am right here! 🫂 Try reaching out to a friend or listening to your favorite podcast for company.",
-
             "angry": "Deep breaths... 😤 Try writing down your anger on paper and then safely ripping it up to release the energy.",
-
             "scared": "You are safe. 🛡️ Try to name 5 things you can see right now to bring your mind back to the present.",
-
             "invisible": "I see you and you matter! 🌟 Your voice is important. Don't be afraid to take up space.",
-
             "phone": "A digital detox might be exactly what you need. 📱 Set your phone aside for 30 minutes and look at the real world.",
-
             "bullying": "You deserve to be safe and respected. 🛑 Please tell a teacher or a trusted adult immediately. You are not alone.",
-
             "friend": "Friendship has its ups and downs. 🎀 Honest talk is usually the best way to fix things. Take your time.",
-
             "family": "Family can be tough to navigate. 🏠 Find your own quiet corner to relax and be yourself.",
-
             "body": "Your body is amazing for all it does! 🌸 Treat it with kindness and remember that beauty comes from within.",
-
             "future": "The future is full of possibilities. 🌈 Don't stress about the 'when'—just focus on your 'now'.",
-
             "failure": "Failure is just a stepping stone to success. 🎓 Every mistake is a lesson learned. Keep going!",
-
             "worthless": "You are incredibly valuable. 🕊️ The world is a better place because you are in it. Never forget that.",
-
             "anxious": "Anxiety is just a feeling, not your reality. 🌬️ Focus on your breathing and know that this will pass.",
-
             "nervous": "Nervousness means you care! 🎡 Use that adrenaline to power through your challenge.",
-
             "motivation": "Motivation starts with one small step. 🚀 Just do one tiny task to get the momentum going.",
-
             "heartbreak": "Time is a great healer. 💔 Be patient with your heart and surround yourself with people who love you.",
-
             "english": "For your English test: 📝 Focus on your clear points and evidence. You're going to do great!",
-
             "math": "Math is just logic. 🔢 Take it one step at a time and don't be afraid to ask for help.",
-
             "science": "Stay curious! 🧪 The world is full of wonder. You're doing a great job learning.",
-
             "gym": "Exercise is a great mood booster! 🏋️‍♂️ Even a quick walk can change your perspective.",
-
             "music": "Let the music heal you! 🎧 Put on your favorite song and let the rhythm lift your spirits.",
-
             "thanks": "You are so welcome! 💖 I'm always here if you need to talk again.",
-
             "hello": "Hi bestie! ✨ I'm PinkMind. How can I support your mental wellness today?",
-
             "weather": "Rain or shine, you can have a great day. ☀️ If it's raining, enjoy the cozy vibes!",
-
             "parents": "Communicating with parents can be hard. 🏠 Try to stay calm and explain how you feel honestly.",
-
             "grades": "Your grades are just a snapshot of one moment. 📝 Your character and kindness matter so much more.",
-
             "internet": "The internet is a tool—use it for good! 🌐 Remember to take breaks and stay safe online.",
-
             "guilty": "We all make mistakes. 🕊️ Learn the lesson and let go of the shame. You are a work in progress.",
-
             "confused": "It's okay to not have all the answers yet. 🧩 Life is a journey of discovery. Take your time.",
-
             "creative": "Your creativity is your superpower! 🎭 Use it to express yourself and color your world.",
-
             "hope": "Always keep hope in your heart. 🕯️ Better things are coming your way, I promise.",
-
             "proud": "I am so proud of you! 🌟 Celebrate your wins, no matter how small they may seem.",
-
             "crying": "Crying is a healthy release. 🌊 Let it out and then take a deep breath. You'll feel better soon.",
-
             "annoyed": "Deep breaths... 🙄 Don't let the small things ruin your day. You're bigger than this annoyance.",
-
             "social": "Social situations can be tricky. 🎡 Just be yourself—that's the best person you can be!",
-
             "regret": "Don't let the past weigh you down. 🕊️ You are growing and changing every single day. Look forward!",
-
             "money": "Financial stress is tough. 💸 Focus on the simple, free joys in life while you work things out.",
-
             "advice": "My advice? 💡 Be your own best friend. Speak to yourself with the same love you give others.",
-
             "help": "I'm here! 🆘 If you need urgent help, reach out to a professional or a helpline immediately. You matter!",
-
             "joke": "Why don't skeletons fight each other? Because they don't have the guts! 😂 Hope that made you smile!",
-
             "shame": "Shame loses its power when it's shared. 🫂 Talk to someone you trust. You are worthy of love."
         };
 
